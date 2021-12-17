@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # **INHERITANCE DOT ARTIFACTS**
 #### destined for existence as an app and/or online at ```https://inheritance.artifacts``` accompanied by the tagline *'where life lives'*
 
@@ -76,7 +75,7 @@ Quit the server with CONTROL-C.
 
 <br>
 
-<img src="Inheritance/Images/Django_App.jpg" title="" alt=""/>
+<img src="Inheritance/Images/Django_App.jpg" title="" alt="Django App Launch Successful"/>
 
 <br>
 
@@ -115,6 +114,3 @@ Add Artifact is the opportunity to consider what you will add to the story. In o
 
 Gallery is a collection of the vibrancy of contributions to the Inheritance community through shared artifacts.
 <br>
-=======
-
->>>>>>> fc52efdf34f1b7727803ba69e6f81064b3fbc9f5

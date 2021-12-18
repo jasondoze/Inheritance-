@@ -1,0 +1,22 @@
+<!-- Extends calls from external file main.html to add consistent style & elements -->
+    {% extends 'main.html' %}
+   
+
+    {% block content %}
+    <button type="button"> 
+    <a href="{% url 'gallery' %}">GALLERY</a> 
+    </button>
+    <br/>
+    <br/>
+    <button type="button"> 
+    <a href="{% url 'landingpage' %}">HOME</a>
+    </button>
+    <br/>
+    <br/>
+<!-- Post images on addartifact and/or gallery page -->
+    <form action="{% url 'addartifact' %}" method="POST">
+        {% csrf_token %} {{ form }}
+        <input type="submit" name="add" value="ADD ARTIFACT" />
+    </form>
+    {% endblock content %}
+

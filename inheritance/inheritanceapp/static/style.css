@@ -1,4 +1,118 @@
 /* This css file is where our external styles are being pulled from */
 body {
     background-color: #FAFAFA;
+    margin-top: 44px;
+    margin-left: 44px;
+    margin-bottom: 44px;
+}
+button {
+    width: 144px;
+    border-radius: 67px;
+    border-color: tomato;
+    background-color: white;  
+}
+button > a {
+    text-decoration: none;
+    color: darksalmon;
+}
+button:hover > a {
+    transform: scale(1.025);
+    color: tomato;
+}
+#inheritanceTitle {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: xx-large;
+
+}
+#inheritanceTagline {
+    margin-top: -11px;
+    font-family: cursive;
+    font-style: italic;
+    font-size: medium;
+
+}
+#symbolicRelease {
+    width: 50%;
+    border-radius: 67px;
+}
+form > input#symbolicRelease:focus {
+   outline: none;
+}
+form > input#symbolicRelease:focus {
+    border: 1.15px dotted tomato;
+ }
+form > input#symbolicRelease::placeholder {
+    font-size: smaller;
+}
+#symRelSubmitBtn {
+    border-radius: 67px;
+    width: 144px;
+}
+#symRelSubmitBtn:hover {
+   color: tomato;
+   border-color: tomato;
+}
+#imgOnLandingPage {
+    width: 100%;
+    margin-top: 24px;
+    margin-right: 44px;
+    margin-bottom: 11px;
+}
+
+p#ourStoryIntroSentence {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+#ourStoryOneThingText {
+    font-style: italic;
+}
+.ourStorySubHeads {
+    font-size: large;
+    margin-bottom: -1px;
+}
+#ourStoryJoinHead {
+    margin-bottom: -17px;
+}
+#ourStoryAddArtifactPageLink {
+    text-decoration: none;
+}
+
+/* DECIDED NOT TO INCLUDE LABELS IN LIEU OF PLACEHOLDER TEXT */
+/* label {
+    font-variant: small-caps;
+    text-transform: lowercase;
+    font-weight: bold;
+} */
+
+input#id_title, textarea#id_description, input#id_img_link {
+    display: block;
+    border-radius: 3px;
+    margin-bottom: 9px;
+    width: 50%;
+}
+input#id_title::placeholder, textarea#id_description::placeholder, input#id_img_link::placeholder {
+    font-size: smaller;
+    text-align: center;
+    padding-top: 7px;
+}
+input#id_title:focus, textarea#id_description:focus, input#id_img_link:focus {
+    outline: none;
+}
+input#id_title:focus, textarea#id_description:focus, input#id_img_link:focus {
+    border-color: tomato;
+    border: 1.25px dotted darksalmon;
+}
+#addArtifactFormSubmitBtn {
+    display: block;
+    font-weight: bold;
+
+    border-radius: 107px;
+    padding: 17px;
+    width: 167px;
+    margin-top: 23px;
+}
+#addArtifactFormSubmitBtn:hover {
+    color: tomato;
+    border-color: tomato;
 }

@@ -1,12 +1,5 @@
-<style>
-    input[type='text'],
-    input[type='url'],
-    textarea {
-        display: block;
-    }
-</style>
+
 <!-- Button to edit or delete artifact -->
-<h1>EDIT ARTIFACT</h1>
 <form action="{% url 'editartifact' artifact_id %}" method="POST">
 {% csrf_token %} {{ form }}
 <input type="submit" name="save" value="SAVE EDITED ARTIFACT" />

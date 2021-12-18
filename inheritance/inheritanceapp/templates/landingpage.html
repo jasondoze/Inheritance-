@@ -2,9 +2,7 @@
     {% extends 'main.html' %}
    
     {% block content%}
-    <h1>LANDING PAGE</h1>
-    <br/>
-    <br/>
+    
     <button type="button"> 
         <a href="{% url 'ourstory' %}">OUR STORY</a>
     </button>
@@ -21,14 +19,14 @@
     <br/>
     <br/>
     <form>
-        <input type="text" id="symbolicRelease" name="symbolic_release" placeholder="symbolic release: unburdened from ..." title="SYMBOLIC RELEASE" style="width: 50%;" />
-        <input type="submit" id="symRelSubmitBtn" name="sym_rel_submit_btn" value="SUBMIT" style="width: 15%;" />
+        <input type="text" id="symbolicRelease" name="symbolic_release" placeholder="   symbolic release: unburdening from ..." title="SYMBOLIC RELEASE" />
+        <input type="submit" id="symRelSubmitBtn" name="sym_rel_submit_btn" value="SUBMIT" />
     </form>
 
     {% for artifact in artifacts %}
     <div>
-        <img src="{{ artifact.img_link }}" style="display: block; width: 100%; margin-top: 27px;"/>
-        <h2 style="margin-top: 11px;">{{ artifact.title }}</h2>
+        <img src="{{ artifact.img_link }}" id="imgOnLandingPage" />
+        <h2>{{ artifact.title }}</h2>
         <p>{{ artifact.description }}</p>
         <a href="{% url 'editartifact' artifact.artifact_id %}">EDIT ARTIFACT</a>
     </div>

@@ -1,7 +1,6 @@
 <!-- Extends calls from external file main.html to add consistent style & elements -->
     {% extends 'main.html' %}
    
-
     {% block content %}
     <button type="button"> 
     <a href="{% url 'gallery' %}">GALLERY</a> 
@@ -14,9 +13,13 @@
     <br/>
     <br/>
 <!-- Post images on addartifact and/or gallery page -->
-    <form action="{% url 'addartifact' %}" method="POST">
+    <div id="addArtifactFormWrappingDiv">
+        <center>
+    <form action="{% url 'addartifact' %}" method="POST" id="addArtifactForm">
         {% csrf_token %} {{ form }}
-        <input type="submit" name="add" value="ADD ARTIFACT" />
+        <input type="submit" name="add" value="ADD ARTIFACT" id="addArtifactFormSubmitBtn"/>
     </form>
+    </center>
+    </div>
     {% endblock content %}
 

@@ -1,0 +1,62 @@
+    {% extends 'main.html' %}
+
+    {% block content %}
+    <h1>GALLERY</h1>
+    <button type="button"> 
+        <a href="{% url 'addartifact' %}">ADD ARTIFACT</a>
+    </button>
+    <br/>
+    <br/>
+    <button type="button"> 
+        <a href="{% url 'landingpage' %}">HOME</a>
+    </button>
+    <br/>
+    <br/>
+
+    <!-- mock gallery page to illustrate what would look like polished -->
+    <div style="margin-left: 150px; margin-bottom: 50px;">
+    <div class="row">
+        <div class="col-3">
+                <img src="https://complianz.io/wp-content/uploads/2019/03/placeholder-300x202.jpg">
+        </div>
+        <div class="col-3">
+            <img src="https://complianz.io/wp-content/uploads/2019/03/placeholder-300x202.jpg">
+        </div>
+        <div class="col-3">
+            <img src="https://complianz.io/wp-content/uploads/2019/03/placeholder-300x202.jpg">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+                <img src="https://complianz.io/wp-content/uploads/2019/03/placeholder-300x202.jpg">
+        </div>
+        <div class="col-3">
+            <img src="https://complianz.io/wp-content/uploads/2019/03/placeholder-300x202.jpg">
+        </div>
+        <div class="col-3">
+            <img src="https://complianz.io/wp-content/uploads/2019/03/placeholder-300x202.jpg">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+                <img src="https://complianz.io/wp-content/uploads/2019/03/placeholder-300x202.jpg">
+        </div>
+        <div class="col-3">
+            <img src="https://complianz.io/wp-content/uploads/2019/03/placeholder-300x202.jpg">
+        </div>
+        <div class="col-3">
+            <img src="https://complianz.io/wp-content/uploads/2019/03/placeholder-300x202.jpg">
+        </div>
+    </div>
+</div>
+    <!-- Rows and columns for the gallery page -->
+    <!-- <div class="container-fluid row">
+        <div class="col-3">
+            <a href="{{ photo.image.url }}">
+                <img src="{{ photo.get_display_url }}" alt="{{ photo.title }}">
+            </a>
+        </div>
+    </div> -->
+    {% endblock content %}
+
+

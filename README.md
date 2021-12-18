@@ -9,13 +9,12 @@ Jason Doze<br>
 
 La'Tonia Mertica Sheppard Walker<br>
 [GITHUB UN: LaTonia-Mertica](https://github.com/LaTonia-Mertica)<br>
-<br>
 
-###### [view flow chart](Inheritance/Images/Flowchart.png)
-###### [view landing page wireframe](Inheritance/Images/landingpagewireframe.png)
-###### [view gallery wireframe](Inheritance/Images/gallerywireframe.png)
-###### [view add artifact wireframe](Inheritance/Images/addartifactwireframe.png)
-###### [view entity relationship diagram](Inheritance/Images/ERD.png)
+###### [view flow chart](images/Flowchart.png)
+###### [view landing page wireframe](images/landingpagewireframe.png)
+###### [view gallery wireframe](images/gallerywireframe.png)
+###### [view add artifact wireframe](images/addartifactwireframe.png)
+###### [view entity relationship diagram](images/ERD.png)
 
 <br>
 
@@ -75,7 +74,7 @@ Quit the server with CONTROL-C.
 
 <br>
 
-<img src="Inheritance/Images/Django_App.jpg" title="Django App Launch Successful Screen" alt="Django App Launch Successful"/>
+<img src="images/Django_App.jpg" title="Django App Launch Successful Screen" alt="Django App Launch Successful"/>
 
 <br>
 
@@ -92,25 +91,25 @@ Quit the server with CONTROL-C.
 ---
 <br>
 
-<img src="Inheritance/Images/landing_page.jpg" title="Landing Page" alt="Landing Page Screen"/>
+<img src="images/landing_page.jpg" title="Landing Page" alt="Landing Page Screen"/>
 
 Landing Page establishes overall ambiance and navigation. It also, through SYMBOLIC RELEASE, demonstrates our elevated dedication to self-awareness, getting beyond barriers, and holistic health.
 <br>
 <br>
 
-<img src="Inheritance/Images/our_story.jpg" title="Our Story Page" alt="Our Story Page Screen"/>
+<img src="images/our_story.jpg" title="Our Story Page" alt="Our Story Page Screen"/>
 
 Our Story shares insight, intent, and sense of community at the heart of the creation of Inheritance. 
 <br>
 <br>
 
-<img src="Inheritance/Images/add_artifact.jpg" title="Add Artifacts Page" alt="Add Artifacts Page Screen"/>
+<img src="images/add_artifact.jpg" title="Add Artifacts Page" alt="Add Artifacts Page Screen"/>
 
 Add Artifact is the opportunity to consider what you will add to the story. In other words, what image and description you would submit as an artifact.
 <br>
 <br>
 
-<img src="Inheritance/Images/gallery.jpg" title="Gallery Page" alt="Gallery Page Screen"/>
+<img src="images/gallery.jpg" title="Gallery Page" alt="Gallery Page Screen"/>
 
 Gallery is a collection of the vibrancy of contributions through shared artifacts.
 <br>

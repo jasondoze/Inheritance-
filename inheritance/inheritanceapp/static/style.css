@@ -22,15 +22,21 @@ button:hover > a {
 #inheritanceTitle {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: xx-large;
-
+    display: inline;
 }
-#inheritanceTagline {
+img#inheritanceLogo {
+    width: 87px; 
+    display: inline;
+ }
+
+ /* NOT USING IN LIEU OF LOGO */
+/* #inheritanceTagline {
     margin-top: -11px;
     font-family: cursive;
     font-style: italic;
     font-size: medium;
+} */
 
-}
 #symbolicRelease {
     width: 50%;
     border-radius: 67px;

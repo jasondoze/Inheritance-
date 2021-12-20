@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 # sets the urls for pages on the site
 urlpatterns = [
@@ -9,4 +10,6 @@ urlpatterns = [
     path('gallery', views.gallery, name='gallery'),
     path('editartifact/<int:artifact_id>', views.editartifact, name="editartifact")
 ]
+
+urlpatterns += staticfiles_urlpatterns()
 

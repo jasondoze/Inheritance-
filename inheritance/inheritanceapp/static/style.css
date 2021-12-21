@@ -27,7 +27,7 @@ button:hover > a {
 img#inheritanceLogo {
     width: 87px; 
     display: inline;
- }
+}
 
  /* NOT USING IN LIEU OF LOGO */
 /* #inheritanceTagline {
@@ -46,7 +46,7 @@ form > input#symbolicRelease:focus {
 }
 form > input#symbolicRelease:focus {
     border: 1.15px dotted tomato;
- }
+}
 form > input#symbolicRelease::placeholder {
     font-size: smaller;
 }
@@ -64,14 +64,13 @@ form > input#symbolicRelease::placeholder {
     margin-right: 44px;
     margin-bottom: 11px;
 }
-
 p#ourStoryIntroSentence {
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bold;
-}
-#ourStoryOneThingText {
-    font-style: italic;
+    color: lightgrey;
+    font-size: 67px;
+    text-transform: uppercase;
 }
 .ourStorySubHeads {
     font-size: large;

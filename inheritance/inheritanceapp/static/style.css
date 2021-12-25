@@ -69,8 +69,11 @@ p#ourStoryIntroSentence {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bold;
     color: lightgrey;
-    font-size: 67px;
+    font-size: 167px;
     text-transform: uppercase;
+
+    margin-top: -25px;
+    margin-bottom: -57px;
 }
 .ourStorySubHeads {
     font-size: large;

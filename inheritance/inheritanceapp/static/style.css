@@ -19,6 +19,19 @@ button:hover > a {
     transform: scale(1.025);
     color: tomato;
 }
+label {
+    display: none;
+}
+h3 {
+    text-transform: lowercase;
+    font-size: large;
+    margin-left: 13px;
+}
+b {
+    font-weight: lighter;
+    text-transform: lowercase;
+    margin-left: 13px;
+}
 #inheritanceTitle {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: xx-large;
@@ -68,23 +81,36 @@ p#ourStoryIntroSentence {
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bold;
-    color: lightgrey;
+    color: whitesmoke;
+    text-shadow: .25px .25px black;
     font-size: 167px;
     text-transform: uppercase;
 
-    margin-top: -25px;
-    margin-bottom: -57px;
+    margin-top: -27px;
+    margin-bottom: -59px;
 }
 .ourStorySubHeads {
     font-size: large;
     margin-bottom: -1px;
+    color: darksalmon;
+    text-shadow: .25px .25px black;
 }
 #ourStoryJoinHead {
     margin-bottom: -17px;
 }
+.ourStoryParagraphs {
+    margin-right: 44px;
+    text-align: justify;
+}
 #ourStoryAddArtifactPageLink {
     text-decoration: none;
+    font-size: small;
+    color: darksalmon;
+    text-shadow: .25px .25px black;
 }
+#ourStoryAddArtifactPageLink:hover {
+    color: tomato;
+} 
 
 /* DECIDED NOT TO INCLUDE LABELS IN LIEU OF PLACEHOLDER TEXT */
 /* label {
@@ -93,23 +119,32 @@ p#ourStoryIntroSentence {
     font-weight: bold;
 } */
 
-input#id_title, textarea#id_description, input#id_img_link {
+input#id_imgtitle, input#id_imgdesc {
     display: block;
-    border-radius: 3px;
+    border-radius: 13px;
     margin-bottom: 9px;
     width: 50%;
 }
-input#id_title::placeholder, textarea#id_description::placeholder, input#id_img_link::placeholder {
+input#id_image, input#file-upload-button {
+    width: 25%;
+    border-radius: 3px;
+    background-color: #FAFAFA;
+}
+input#id_imgtitle::placeholder, input#id_imgdesc::placeholder, input#id_image::placeholder {
     font-size: smaller;
     text-align: center;
     padding-top: 7px;
 }
-input#id_title:focus, textarea#id_description:focus, input#id_img_link:focus {
+input#id_imgtitle:focus, input#id_imgdesc:focus, input#id_image:focus, input#file-upload-button:focus {
     outline: none;
 }
-input#id_title:focus, textarea#id_description:focus, input#id_img_link:focus {
+input#id_imgtitle:focus, input#id_imgdesc:focus, input#id_image:focus {
     border-color: tomato;
     border: 1.25px dotted darksalmon;
+}
+.uploadSuccessText {
+    margin-top: 13px;
+    margin-bottom: 13px;
 }
 #addArtifactFormSubmitBtn {
     display: block;

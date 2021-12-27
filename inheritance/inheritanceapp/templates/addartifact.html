@@ -1,25 +1,33 @@
 <!-- Extends calls from external file main.html to add consistent style & elements -->
-    {% extends 'main.html' %}
+{% extends 'main.html' %}
    
-    {% block content %}
-    <button type="button"> 
-    <a href="{% url 'gallery' %}">GALLERY</a> 
-    </button>
-    <br/>
-    <br/>
-    <button type="button"> 
-    <a href="{% url 'landingpage' %}">HOME</a>
-    </button>
-    <br/>
-    <br/>
+{% block content %}
+<button type="button"> 
+<a href="{% url 'gallery' %}">GALLERY</a> 
+</button>
+<br/>
+<br/>
+<button type="button"> 
+<a href="{% url 'landingpage' %}">HOME</a>
+</button>
+<br/>
+<br/>
 <!-- Post images on addartifact and/or gallery page -->
-    <div id="addArtifactFormWrappingDiv">
-        <center>
-    <form action="{% url 'addartifact' %}" method="POST" id="addArtifactForm">
-        {% csrf_token %} {{ form }}
-        <input type="submit" name="add" value="ADD ARTIFACT" id="addArtifactFormSubmitBtn"/>
-    </form>
+<div id="addArtifactFormWrappingDiv">
+    <center>
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+     {{ form.as_p }}
+    <button type="submit">upload</button>
+  </form>
+  
+  {% if img_obj %}
+    <h3 class="uploadSuccessText">Succesfully Uploaded {{img_obj.title}}</h3>
+    <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px">
+  {% endif %}
+
     </center>
-    </div>
-    {% endblock content %}
+</div>
+{% endblock content %}
 

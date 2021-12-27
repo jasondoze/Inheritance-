@@ -1,61 +1,32 @@
-    {% extends 'main.html' %}
+{% extends 'main.html' %}
+{% load static %}
 
-    {% block content %}
-    <button type="button"> 
-        <a href="{% url 'addartifact' %}">ADD ARTIFACT</a>
-    </button>
-    <br/>
-    <br/>
-    <button type="button"> 
-        <a href="{% url 'landingpage' %}">HOME</a>
-    </button>
-    <br/>
-    <br/>
+{% block content %}
+<button type="button"> 
+    <a href="{% url 'addartifact' %}">ADD ARTIFACT</a>
+</button>
+<br/>
+<br/>
+<button type="button"> 
+    <a href="{% url 'landingpage' %}">HOME</a>
+</button>
+<br/>
+<br/>
 
-    <!-- mock gallery page to illustrate what would look like polished -->
-    <div>
+<!-- Rows and columns for the gallery page -->
+<div class="container">
     <div class="row">
-        <div class="col-3">
-                <img src="https://complianz.io/wp-content/uploads/2019/03/placeholder-300x202.jpg">
-        </div>
-        <div class="col-3">
-            <img src="https://complianz.io/wp-content/uploads/2019/03/placeholder-300x202.jpg">
-        </div>
-        <div class="col-3">
-            <img src="https://complianz.io/wp-content/uploads/2019/03/placeholder-300x202.jpg">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-3">
-                <img src="https://complianz.io/wp-content/uploads/2019/03/placeholder-300x202.jpg">
-        </div>
-        <div class="col-3">
-            <img src="https://complianz.io/wp-content/uploads/2019/03/placeholder-300x202.jpg">
-        </div>
-        <div class="col-3">
-            <img src="https://complianz.io/wp-content/uploads/2019/03/placeholder-300x202.jpg">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-3">
-                <img src="https://complianz.io/wp-content/uploads/2019/03/placeholder-300x202.jpg">
-        </div>
-        <div class="col-3">
-            <img src="https://complianz.io/wp-content/uploads/2019/03/placeholder-300x202.jpg">
-        </div>
-        <div class="col-3">
-            <img src="https://complianz.io/wp-content/uploads/2019/03/placeholder-300x202.jpg">
-        </div>
-    </div>
-</div>
-    <!-- Rows and columns for the gallery page -->
-    <!-- <div class="container-fluid row">
-        <div class="col-3">
-            <a href="{{ photo.image.url }}">
-                <img src="{{ photo.get_display_url }}" alt="{{ photo.title }}">
-            </a>
-        </div>
-    </div> -->
-    {% endblock content %}
+{% for results in Artifact %}
+    <div class="col-4">
+        <h3 style="color: rgb(10, 233, 199)">{{ results.imgtitle }}</h3>
+
+        <img src="{{results.image.url}}"width="375" alt="{{results.imgtitle}}" class="img-thumbnail">
+<br/>
+<b>{{ results.imgdesc }}</b>        
+<hr/>   
+</div>    
+{% endfor %}
+</div> 
+{% endblock content %}
 
 

@@ -4,12 +4,13 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.shortcuts import render
 from .models import *
-from .forms import EditorForm
+from .forms import EditorForm, ImageForm
+
 
 # Create your views here.
 def landingpage(request):
-    artifacts = Artifact.objects.all().order_by('artifact_id')
-    return render(request=request, template_name='landingpage.html', context={'artifacts': artifacts})
+   artifact = Artifact.objects.all().order_by('artifact_id')
+   return render(request=request, template_name='landingpage.html', context={'artifact': artifact})
 
 def ourstory(request):
     return render(request,'ourstory.html')
@@ -25,30 +26,46 @@ def addartifact(request):
     if request.method == 'POST':
         form = EditorForm(request.POST)
         if form.is_valid():
-            title = form.cleaned_data['title']
-            description = form.cleaned_data['description']
-            img_link = form.cleaned_data['img_link']
-
-            artifacts = Artifact.objects.create(title=title, description=description, img_link=img_link)
+            imgtitle = form.cleaned_data['imgtitle']
+            imgdesc = form.cleaned_data['imgdesc']
+            image = form.cleaned_data['image']
+            artifact = Artifact.objects.create(imgtitle=imgtitle, imgdesc=imgdesc, image=image)
         return HttpResponseRedirect(reverse('landingpage'))
 
 def editartifact(request, artifact_id):
     if request.method == 'GET':
         artifact = Artifact.objects.get(pk=artifact_id)
-        form = EditorForm(initial={'title': artifact.title, 'description': artifact.description, 'img_link': artifact.img_link })
+        form = EditorForm(initial={'imgtitle': artifact.imgtitle, 'imgdesc': artifact.imgdescr, 'image': artifact.image })
         return render(request=request, template_name='editartifact.html', context={'form': form, 'artifact_id': artifact_id})
 
     if request.method == 'POST':
         form = EditorForm(request.POST)
         if form.is_valid():
             if 'save' in request.POST:
-                title = form.cleaned_data['title']
-                description = form.cleaned_data['description']
-                img_link = form.cleaned_data['img_link']
+                imgtitle = form.cleaned_data['imgtitle']
+                imgdesc = form.cleaned_data['imgdesc']
+                image = form.cleaned_data['image']
                 artifacts = Artifact.objects.filter(pk=artifact_id)
-                artifacts.update(title=title, description=description, img_link=img_link)
+                artifacts.update(imgtitle=imgtitle, imgdesc=imgdesc, image=image)
             elif 'deleteartifact' in request.POST:
                 Artifact.objects.filter(pk=artifact_id).delete()
         return HttpResponseRedirect(reverse('landingpage'))
 
+def imagedisplay(request):
+    resultsdisplay = Artifact.objects.all()
+    return render(request, 'gallery.html',{'Artifact':resultsdisplay})
 
+def image_upload_view(request):
+    """Process images uploaded by users"""
+    if request.method == 'POST':
+        form = ImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            # Get the current instance object to display in the template
+            img_obj = form.instance
+            return render(request, 'addartifact.html', {'form': form, 'img_obj': img_obj})
+    else:
+        form = ImageForm()
+    return render(request, 'addartifact.html', {'form': form})
+
+    

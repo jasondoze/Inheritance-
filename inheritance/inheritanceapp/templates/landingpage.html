@@ -23,11 +23,13 @@
         <input type="submit" id="symRelSubmitBtn" name="sym_rel_submit_btn" value="SUBMIT" />
     </form>
 
+  
+
     {% for artifact in artifacts %}
     <div>
-        <img src="{{ artifact.img_link }}" id="imgOnLandingPage" />
-        <h2>{{ artifact.title }}</h2>
-        <p>{{ artifact.description }}</p>
+        <img src="{{ artifact.image }}" id="imgOnLandingPage" />
+        <h2>{{ artifact.imgtitle }}</h2>
+        <p>{{ artifact.imgdesc }}</p>
         <a href="{% url 'editartifact' artifact.artifact_id %}">EDIT ARTIFACT</a>
     </div>
     {% endfor %}

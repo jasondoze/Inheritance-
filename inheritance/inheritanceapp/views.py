@@ -61,7 +61,7 @@ def imagedisplay(request):
     resultsdisplay = Artifact.objects.all()
     return render(request, 'gallery.html',{'Artifact':resultsdisplay})
 
-#This function starts by checking if the request method is POST. If it is, then a form object called ImageForm is created and saved to the database. The instance of this form object is then passed into the template as an argument. The code starts by creating a new instance of ImageForm and saving it to the database with save(). The code is a snippet of code that processes images uploaded by users. If the request method is "POST", then it will process the image and save it to the database.
+# This function starts by checking if the request method is POST. If it is, then a form object called ImageForm is created and saved to the database. The instance of this form object is then passed into the template as an argument. The code starts by creating a new instance of ImageForm and saving it to the database with save(). The code is a snippet of code that processes images uploaded by users. If the request method is "POST", then it will process the image and save it to the database.
 def image_upload_view(request):
     """Process images uploaded by users"""
     if request.method == 'POST':

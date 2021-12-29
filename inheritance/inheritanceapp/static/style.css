@@ -146,6 +146,11 @@ input#id_imgtitle:focus, input#id_imgdesc:focus, input#id_image:focus {
     margin-top: 13px;
     margin-bottom: 13px;
 }
+.createdAtClass {
+    font-size: xx-small;
+    color: darkturquoise;
+    text-shadow: .25px .25px black;
+}
 #addArtifactFormSubmitBtn {
     display: block;
     font-weight: bold;

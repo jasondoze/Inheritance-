@@ -22,12 +22,12 @@
 
         <img src="{{results.image.url}}"width="375" alt="{{results.imgtitle}}" class="img-thumbnail">
 <br/>
-<b>{{ results.imgdesc }}</b>        
-<b>{{ results.created_at }}</b>    
+<b>{{ results.imgdesc }}</b> 
+<br/>       
+<b class="createdAtClass">created {{ results.created_at|date:"Y-m-d H:m" }}</b>    
 <hr/>   
 </div>    
 {% endfor %}
 </div> 
 {% endblock content %}
-
 

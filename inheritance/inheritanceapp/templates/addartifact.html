@@ -16,10 +16,10 @@
 <div id="addArtifactFormWrappingDiv">
     <center>
 
-  <form method="post" enctype="multipart/form-data">
+  <form method="post" enctype="multipart/form-data" id="addArtifactFormDiv">
     {% csrf_token %}
      {{ form.as_p }}
-    <button type="submit">upload</button>
+    <button type="submit" id="addArtifactUploadBtn">upload</button>
   </form>
   
   {% if img_obj %}

@@ -1,9 +1,11 @@
     <!-- Sets the stage for the inheritance experience -->
     {% extends 'main.html' %}
+    {% load static %}
+   
    
     {% block content%}
-    
-    <button type="button"> 
+    <div id="landingPageAllContentButImgDiv">
+    <button type="button" title="Our Story Button"> 
         <a href="{% url 'ourstory' %}">OUR STORY</a>
     </button>
     <br/>
@@ -22,17 +24,12 @@
         <input type="text" id="symbolicRelease" name="symbolic_release" placeholder="   symbolic release: unburdening from ..." title="SYMBOLIC RELEASE" />
         <input type="submit" id="symRelSubmitBtn" name="sym_rel_submit_btn" value="SUBMIT" />
     </form>
-
-  
-
-    {% for artifact in artifacts %}
-    <div>
-        <img src="{{ artifact.image }}" id="imgOnLandingPage" />
-        <h2>{{ artifact.imgtitle }}</h2>
-        <p>{{ artifact.imgdesc }}</p>
-        <a href="{% url 'editartifact' artifact.artifact_id %}">EDIT ARTIFACT</a>
     </div>
-    {% endfor %}
+
+    <div id="landingPageImgOnlyDiv">
+    <!-- single row/col to contain dynamic randomized image on landing page pulled from images uploaded to gallery -->
+       <img src="{% static 'cleanse.jpg' %}" alt="Dummy Image" width="100%" id="dummyImgOnLandingPage" />
+   </div>
     {% endblock content %}
     
 

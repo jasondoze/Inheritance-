@@ -7,8 +7,8 @@
 </button>
 <br/>
 <br/>
-<button type="button"> 
-    <a href="{% url 'landingpage' %}">HOME</a>
+<button type="button" class="galleryPageHomeBtn"> 
+    <a href="{% url 'landingpage' %}" class="galleryPageHomeBtn">HOME</a>
 </button>
 <br/>
 <br/>
@@ -20,7 +20,7 @@
     <div class="col-4">
         <h3 style="color: rgb(10, 233, 199)">{{ results.imgtitle }}</h3>
 
-        <img src="{{results.image.url}}"width="375" alt="{{results.imgtitle}}" class="img-thumbnail">
+        <img src="{{results.image.url}}" width="375" alt="{{results.imgtitle}}" class="img-thumbnail">
 <br/>
 <b>{{ results.imgdesc }}</b> 
 <br/>       

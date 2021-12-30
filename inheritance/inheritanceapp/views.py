@@ -75,4 +75,5 @@ def image_upload_view(request):
         form = ImageForm()
     return render(request, 'addartifact.html', {'form': form})
 
-    
+
+   

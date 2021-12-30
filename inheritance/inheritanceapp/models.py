@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models.base import *
+from django.db.models.fields import DateTimeField
 from .utils import get_filtered_image
 from PIL import Image
 import numpy as np
@@ -15,11 +16,12 @@ from django.core.files.base import ContentFile
 # image: image of the artifact
 class Artifact(models.Model):
     artifact_id = models.AutoField(primary_key=True)
-    imgtitle = models.CharField(max_length=13)
-    imgdesc = models.CharField(max_length=44)
+    imgtitle = models.CharField(max_length=11)
+    imgdesc = models.CharField(max_length=24)
     image=models.ImageField(upload_to='images/')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
     class Meta:
        ordering = ['-created_at']
 
@@ -44,6 +46,8 @@ class Artifact(models.Model):
         self.image.save(str(self.image), ContentFile(image_png), save=False)
 
         super().save(*args, **kwargs)
+
+
 
 
 '''ACTION_CHOICES= (

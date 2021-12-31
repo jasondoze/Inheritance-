@@ -33,7 +33,7 @@ class Artifact(models.Model):
         # convert the image to array and do some processing
         cv_img = np.array(pil_img)
         # img = get_filtered_image(cv_img, self.action)
-        img = get_filtered_image(cv_img, 'INVERT')
+        img = get_filtered_image(cv_img, 'NO_FILTER')
 
         # convert back to pil image
         im_pil = Image.fromarray(img)

@@ -1,9 +1,40 @@
+{% extends 'main.html' %}
 
-<!-- Button to edit or delete artifact -->
-<form action="{% url 'editartifact' artifact_id %}" method="POST">
-{% csrf_token %} {{ form }}
-<input type="submit" name="save" value="SAVE EDITED ARTIFACT" />
-<input type="submit" name="deleteartifact" value="DELETE ARTIFACT" />
-</form>
 
-<!-- pick a different filter here -->
+
+
+{% block content %}
+
+
+<br/>
+<br/>
+<button type="button" class="galleryPageHomeBtn"> 
+    <a href="{% url 'landingpage' %}" class="galleryPageHomeBtn">HOME</a>
+</button>
+<br/>
+<br/>
+<button type="button" title="Our Story Button"> 
+    <a href="{% url 'ourstory' %}">OUR STORY</a>
+</button>
+<br/>
+<br/>
+<button type="button"> 
+    <a href="{% url 'addartifact' %}">ADD ARTIFACT</a>
+</button>
+<br/>
+<br/>
+<button type="button"> 
+    <a href="{% url 'gallery' %}">GALLERY</a>
+</button>
+<br/>
+<br/>
+<div>
+<button type="submit" class= "btn btn-primary"  data-filter="NO_FILTER">no filter</button>
+<button type="submit" class= "btn btn-primary"  data-filter="COLORIZED">colorized</button>
+<button type="submit" class= "btn btn-primary"  data-filter="GRAYSCALE">grayscale</button>
+<button type="submit" class= "btn btn-primary"  data-filter="BINARY">binary</button>
+<button type="submit" class= "btn btn-primary"  data-filter="INVERT">invert</button>
+<button type="submit" class= "btn btn-primary"  data-filter="DELETE">delete</button>
+</div>
+{% endblock content %}
+

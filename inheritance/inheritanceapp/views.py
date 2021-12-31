@@ -37,24 +37,8 @@ def addartifact(request):
         return HttpResponseRedirect(reverse('landingpage'))
 
 #This function checks if the request is a GET. If it is, then an artifact object with the given ID will be returned. Next, a form is created that has an imgtitle field and an imgdescr field. The image field of this form contains the image of the artifact. This code will allow the user to edit an artifact by providing a form with the necessary fields.  
-def editartifact(request, artifact_id):
-    if request.method == 'GET':
-        artifact = Artifact.objects.get(pk=artifact_id)
-        form = EditorForm(initial={'imgtitle': artifact.imgtitle, 'imgdesc': artifact.imgdescr, 'image': artifact.image })
-        return render(request=request, template_name='editartifact.html', context={'form': form, 'artifact_id': artifact_id})
-
-    if request.method == 'POST':
-        form = EditorForm(request.POST)
-        if form.is_valid():
-            if 'save' in request.POST:
-                imgtitle = form.cleaned_data['imgtitle']
-                imgdesc = form.cleaned_data['imgdesc']
-                image = form.cleaned_data['image']
-                artifacts = Artifact.objects.filter(pk=artifact_id)
-                artifacts.update(imgtitle=imgtitle, imgdesc=imgdesc, image=image)
-            elif 'deleteartifact' in request.POST:
-                Artifact.objects.filter(pk=artifact_id).delete()
-        return HttpResponseRedirect(reverse('landingpage'))
+def editartifact(request):
+    return render(request,'editartifact.html')
 
 # This function starts by creating a list of all the artifacts in the database, then returns a template with an image for each artifact. The code starts by getting all the results from the query that is executed on "Artifact". Then it renders them into a template called gallery.html and renders the gallery.html template with a list of all Artifacts.
 def imagedisplay(request):

@@ -14,7 +14,19 @@ body {
     z-index: -1;  
 }
 #dummyImgOnLandingPage {
-   margin-top: -313px; 
+   margin-top: -687px; 
+}
+.landingPgArtifactDescr {
+    width: 25%;
+    color: wheat;
+    font-size: smaller;
+    text-transform: lowercase;
+    text-shadow: .5px .5px black;
+    text-align: justify;
+
+    position: absolute;
+    right: 37px;
+    bottom: -325px;
 }
 #titleLogoDiv,
 h1#inheritanceTitle,
@@ -31,6 +43,10 @@ p#conceptParagraph  {
     margin-left: 44px;
     margin-right: 44px;
     z-index: 1;
+}
+h1#inheritanceTitle {
+    color: wheat;
+    text-shadow: 1.5px 1.5px black;
 }
 .ourStoryParagraphs {
     text-align: justify;
@@ -76,6 +92,34 @@ button:hover > a {
 }
 .galleryPageHomeBtn {
     margin-bottom: 22px;
+}
+.editPgHomeBtn {
+    margin-bottom: -44px;
+    margin-top: -500px;
+}
+.editPgGalleryBtn {
+    margin-bottom: 47px;
+}
+.editPgFilterBtnsDiv {
+    margin-left: 44px;
+}
+button.btn.btn-primary {
+    font-size: x-small;
+    color: tomato;
+    text-shadow: .25px .25px black;
+    background-color: crimson;
+    border: 1px solid tomato;
+    box-shadow: .25px .25px .25px .25px black;
+
+    padding: 3px;
+    width: 67px;
+    display: inline-block;
+    margin-left: 1.5px;
+    margin-right: 1.5px;
+}
+button.btn.btn-primary:hover {
+    transform: scale(1.15);
+    background-color: darksalmon;
 }
 label {
     display: none;

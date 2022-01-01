@@ -1,14 +1,9 @@
 {% extends 'main.html' %}
 
-
-
-
 {% block content %}
-
-
 <br/>
 <br/>
-<button type="button" class="galleryPageHomeBtn"> 
+<button type="button" class="editPgHomeBtn galleryPageHomeBtn"> 
     <a href="{% url 'landingpage' %}" class="galleryPageHomeBtn">HOME</a>
 </button>
 <br/>
@@ -23,12 +18,12 @@
 </button>
 <br/>
 <br/>
-<button type="button"> 
+<button type="button" class="editPgGalleryBtn"> 
     <a href="{% url 'gallery' %}">GALLERY</a>
 </button>
 <br/>
 <br/>
-<div>
+<div class="editPgFilterBtnsDiv">
 <button type="submit" class= "btn btn-primary"  data-filter="NO_FILTER">no filter</button>
 <button type="submit" class= "btn btn-primary"  data-filter="COLORIZED">colorized</button>
 <button type="submit" class= "btn btn-primary"  data-filter="GRAYSCALE">grayscale</button>

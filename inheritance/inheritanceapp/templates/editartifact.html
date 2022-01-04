@@ -23,13 +23,33 @@
 </button>
 <br/>
 <br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div id="addArtifactFormWrappingDiv">
+    
+    <center>
+        <img src="{{ artifact.image.url}}" alt="connect" style="max-height:1500px">
+        <form method="post" enctype="multipart/form-data" id="editArtifactFormDiv">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit" id="editArtifactUploadBtn">Update</button>
+          </form>
+    </center>
+</div>
+<br/>
+
 <div class="editPgFilterBtnsDiv">
-<button type="submit" class= "btn btn-primary"  data-filter="NO_FILTER">no filter</button>
-<button type="submit" class= "btn btn-primary"  data-filter="COLORIZED">colorized</button>
-<button type="submit" class= "btn btn-primary"  data-filter="GRAYSCALE">grayscale</button>
-<button type="submit" class= "btn btn-primary"  data-filter="BINARY">binary</button>
-<button type="submit" class= "btn btn-primary"  data-filter="INVERT">invert</button>
-<button type="submit" class= "btn btn-primary"  data-filter="DELETE">delete</button>
+    </center>
+        <button type="submit" class= "btn btn-primary"  data-filter="NO_FILTER">no filter</button>
+        <button type="submit" class= "btn btn-primary"  data-filter="COLORIZED">colorized</button>
+        <button type="submit" class= "btn btn-primary"  data-filter="GRAYSCALE">grayscale</button>
+        <button type="submit" class= "btn btn-primary"  data-filter="BINARY">binary</button>
+        <button type="submit" class= "btn btn-primary"  data-filter="INVERT">invert</button>
+        <button type="submit" class= "btn btn-primary"  data-filter="DELETE">delete</button>
+    </center>
 </div>
 {% endblock content %}
 

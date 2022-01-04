@@ -9,7 +9,8 @@ urlpatterns = [
     path('ourstory/', views.ourstory, name='ourstory'),
     path('gallery/',views.imagedisplay, name='gallery'), 
     path('addartifact/', views.image_upload_view, name='addartifact'),
-    path('editartifact/', views.editartifact, name="editartifact"), 
+    # <int:editartifact>  
+    path('editartifact/<int:id>', views.editartifact, name="editartifact"), 
 ]
 
 urlpatterns += staticfiles_urlpatterns()

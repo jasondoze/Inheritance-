@@ -19,7 +19,7 @@
 {% for results in Artifact %}
     <div class="col-4">
         <h3 style="color: rgb(10, 233, 199)">{{ results.imgtitle }}</h3>
-
+<!-- {{ results.artifact_id }}  -->
         <img src="{{results.image.url}}" width="375" alt="{{results.imgtitle}}" class="img-thumbnail">
 <br/>
 <b>{{ results.imgdesc }}</b> 

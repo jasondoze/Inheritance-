@@ -7,6 +7,11 @@ import numpy as np
 from io import BytesIO
 from django.core.files.base import ContentFile
 
+# from django.utils import timezone
+# now = timezone.now()
+
+
+
 # Create your models here.
 # model(s) for blog-style additions and edits
 # Article model for the database the artifact will be stored in with the following fields:
@@ -21,6 +26,14 @@ class Artifact(models.Model):
     image=models.ImageField(upload_to='images/')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    # def save(self, *args, **kwargs):
+    #     if not self.your.field:
+    #     self.date_field = datetime.datetime.now()
+    #     super(ModelName, self).save(*args, **kwargs)
+
+    # _updated = models.DateTimeField()
+    # _updatedby = models.ForeignKey(Person, null=True, db_column='_updatedby', blank=True, related_name='acctupdated_by', on_delete=models.SET_NULL)
 
     class Meta:
        ordering = ['-created_at']

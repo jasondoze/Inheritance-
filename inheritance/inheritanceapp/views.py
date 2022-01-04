@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.shortcuts import render
 from .models import *
-from .forms import EditorForm, ImageForm
+from .forms import EditorForm, ImageForm, EditImageForm
 
 
 # Create your views here.
@@ -22,23 +22,38 @@ def gallery(request):
     return render(request,'gallery.html')
 
 # This function is for adding an image to the list of artifacts. The code first checks if the request is a GET or POST, and then it creates a form with all the necessary fields for adding an artifact. If the form is valid, it will create an instance of Artifact and return HttpResponseRedirect(reverse('landingpage') The code will add an image to the database if a form is submitted. If the method of the request is GET, then it will render a template called "addartifact.html" with data from the form in order to return an HTML response. If the method of the request is POST, then it will create an instance of Artifact and assign values to its attributes using cleaned_data from the form.
-def addartifact(request):
-    if request.method == 'GET':
-        form = EditorForm()
-        return render(request=request,template_name='addartifact.html', context={'form': form})
+# def addartifact(request):
+#     if request.method == 'GET':
+#         form = EditorForm()
+#         return render(request=request,template_name='addartifact.html', context={'form': form})
 
-    if request.method == 'POST':
-        form = EditorForm(request.POST)
-        if form.is_valid():
-            imgtitle = form.cleaned_data['imgtitle']
-            imgdesc = form.cleaned_data['imgdesc']
-            image = form.cleaned_data['image']
-            artifact = Artifact.objects.create(imgtitle=imgtitle, imgdesc=imgdesc, image=image)
-        return HttpResponseRedirect(reverse('landingpage'))
+#     if request.method == 'POST':
+#         form = EditorForm(request.POST)
+#         if form.is_valid():
+#             imgtitle = form.cleaned_data['imgtitle']
+#             imgdesc = form.cleaned_data['imgdesc']
+#             image = form.cleaned_data['image']
+#             artifact = Artifact.objects.create(imgtitle=imgtitle, imgdesc=imgdesc, image=image)
+#         return HttpResponseRedirect(reverse('gallery'))
 
 #This function checks if the request is a GET. If it is, then an artifact object with the given ID will be returned. Next, a form is created that has an imgtitle field and an imgdescr field. The image field of this form contains the image of the artifact. This code will allow the user to edit an artifact by providing a form with the necessary fields.  
-def editartifact(request):
-    return render(request,'editartifact.html')
+def editartifact(request, id):
+    if request.method == 'GET':
+        artifact = Artifact.objects.get(artifact_id=id)
+        form = EditImageForm(instance=artifact) 
+        return render(request=request,template_name='editartifact.html', context={'form': form, 'artifact': artifact})
+   
+    if request.method == 'POST':
+        form = EditImageForm(request.POST)
+        if form.is_valid():
+            update_data = {
+                'imgdesc': form.cleaned_data['imgdesc'], 
+                'imgtitle': form.cleaned_data['imgtitle'],
+            }
+            Artifact.objects.filter(artifact_id=id).update(**update_data)
+            return HttpResponseRedirect(reverse('gallery'))
+    
+   
 
 # This function starts by creating a list of all the artifacts in the database, then returns a template with an image for each artifact. The code starts by getting all the results from the query that is executed on "Artifact". Then it renders them into a template called gallery.html and renders the gallery.html template with a list of all Artifacts.
 def imagedisplay(request):
@@ -55,9 +70,10 @@ def image_upload_view(request):
             # Get the current instance object to display in the template
             img_obj = form.instance
             return render(request, 'addartifact.html', {'form': form, 'img_obj': img_obj})
+            
     else:
         form = ImageForm()
-    return render(request, 'addartifact.html', {'form': form})
+        return render(request, 'addartifact.html', {'form': form})
 
 
    

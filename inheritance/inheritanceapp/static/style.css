@@ -55,14 +55,14 @@ p#conceptParagraph  {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: xx-large;
     margin-bottom: 1.375rem;
-    text-shadow: .048rem .048rem wheat;
+    /* text-shadow: .048rem .048rem wheat; */
 }
 img#inheritanceLogo {
     width: 3.563rem; 
     margin-left: -2.313rem;
     margin-top: .688rem;
     margin-bottom: 1.375rem;
-    filter: drop-shadow(.063rem .063rem wheat)
+    /* filter: drop-shadow(.063rem .063rem wheat) */
 }
 
  /* NOT USING IN LIEU OF LOGO */
@@ -98,7 +98,9 @@ button:hover > a {
     margin-bottom: 2.938rem;
 }
 .editPgFilterBtnsDiv {
-    margin-left: 2.75rem;
+   text-align: center;
+   margin-top: -1.5rem;
+   margin-bottom: 2rem;
 }
 button.btn.btn-primary {
     font-size: x-small;
@@ -179,7 +181,7 @@ p#ourStoryIntroSentence {
 .ourStorySubHeads {
     font-size: large;
     margin-bottom: -.063rem;
-    color: darksalmon;
+    color: black;
     text-shadow: .016rem .016rem black;
 }
 #ourStoryJoinHead {
@@ -196,7 +198,7 @@ p#ourStoryIntroSentence {
     text-shadow: .016rem .016rem black;
 }
 #ourStoryAddArtifactPageLink:hover,
-button:hover {
+button:hover, #preloadImgEditBtn > a:hover {
     color: tomato;
 } 
 
@@ -207,7 +209,7 @@ button:hover {
     font-weight: bold;
 } */
 
-input#id_imgtitle, input#id_imgdesc {
+input#id_imgtitle, input#id_imgdesc, center {
     display: block;
     border-radius: .813rem;
     margin-bottom: .563rem;
@@ -218,7 +220,9 @@ input#id_image, input#file-upload-button {
     border-radius: .188rem;
     background-color: #FAFAFA;
 }
-.control-the-form {
+.control-the-form,
+input#id_imgtitle,
+input#id_imgdesc {
     font-size: x-small;
     padding: .563rem;
 }
@@ -227,7 +231,7 @@ input#file-upload-button {
 }
 .control-choosefile-btn {
   color: red;
-  font-size: x-small;
+  font-size: small;
   text-transform: lowercase;
   text-shadow: .017rem .017rem black;
 }
@@ -256,12 +260,33 @@ input#file-upload-button {
   margin: 0 auto;
 }
 input#id_imgtitle:focus, input#id_imgdesc:focus, input#id_image:focus {
-    border-color: tomato;
-    border: .078rem dotted darksalmon;
+  border-color: tomato;
+  border: .078rem dotted darksalmon;
 }
-.uploadSuccessText {
+center,
+#preloadedImg,
+#preloadImgEditBtn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+h3.uploadSuccessText {
+   text-align: center;
+   font-size: small;
+}
+.uploadSuccessText,
+#preloadImgEditBtn,
+input#id_imgtitle,
+input#id_imgdesc {
     margin-top: .813rem;
     margin-bottom: .813rem;
+}
+button#preloadImgEditBtn > a {
+    color: black;
+}
+#editPageImageRender {
+    width: 75%;
+    margin-top: -25rem;
 }
 .createdAtClass {
     font-size: xx-small;

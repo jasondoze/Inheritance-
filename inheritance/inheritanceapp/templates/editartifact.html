@@ -31,11 +31,11 @@
 <div id="addArtifactFormWrappingDiv">
     
     <center>
-        <img src="{{ artifact.image.url}}" alt="connect" style="max-height:1500px">
+        <img src="{{ artifact.image.url}}" alt="connect" id="editPageImageRender">
         <form method="post" enctype="multipart/form-data" id="editArtifactFormDiv">
             {% csrf_token %}
             {{ form }}
-            <button type="submit" id="editArtifactUploadBtn">Update</button>
+            <button type="submit" id="editArtifactUploadBtn">add artifact</button>
           </form>
     </center>
 </div>

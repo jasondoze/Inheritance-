@@ -153,6 +153,10 @@ form > input#symbolicRelease::placeholder {
    color: tomato;
    border-color: tomato;
 }
+/* NEXT 2 LINES NICE BIT OF CSS ADDED TO THE TOOLKIT */
+input[type=text]#symbolicRelease {
+    padding-left: .813rem;
+}
 #imgOnLandingPage {
     width: 100%;
     /* margin-top: 1.5rem; */
@@ -214,8 +218,28 @@ input#id_image, input#file-upload-button {
     border-radius: .188rem;
     background-color: #FAFAFA;
 }
+.control-the-form {
+    font-size: x-small;
+    padding: .563rem;
+}
+input#file-upload-button {
+    background-color: tomato;
+}
+.control-choosefile-btn {
+  color: red;
+  font-size: x-small;
+  text-transform: lowercase;
+  text-shadow: .017rem .017rem black;
+}
+/* NEED TO DEFINE BOX SHADOW BELOW FOR BEST PRACTICES */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 1.875rem white inset !important;
+}
 
-/* PLAN TO GET PLACEHOLDERS WORKING AGAIN */
+/* PLACEHOLDERS WORKING AGAIN PER CURRENT CODE */
 /* input#id_imgtitle::placeholder, input#id_imgdesc::placeholder, input#id_image::placeholder {
     font-size: smaller;
     text-align: center;

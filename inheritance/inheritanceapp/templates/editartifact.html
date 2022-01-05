@@ -40,8 +40,38 @@
     </center>
 </div>
 <br/>
-
 <div class="editPgFilterBtnsDiv">
+    <label>Blur</label>
+    <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="blur" data-scale="px"/><br>
+    <label>Brightness</label>
+    <input type="range" min="0" max="200" value="0" step="1" onchange="applyFilter()" data-filter="brightness"  data-scale="%"><br>
+    <label>Contrast</label>
+    <input type="range" min="0" max="200" value="0" step="1" onchange="applyFilter()" data-filter="contrast" data-scale="%"/><br/>
+    <label>Grayscale</label>
+    <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="grayscale" data-scale="%"/><br>
+    <label>Invert</label>
+    <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="invert" data-scale="%"/><br/>
+    <label>Opacity</label>
+    <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="opacity" data-scale="%"/><br/>
+    <label>Saturate</label>
+    <input type="range" min="1" max="100" value="1" step="1" onchange="applyFilter()" data-filter="saturate" data-scale="px"/><br>
+    <label>Sepia</label>
+    <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="sepia" data-scale="px"/><br/>
+</div>
+    
+    <script type="text/javascript">
+        var image = document.querySelector('img');
+        var filterControls = document.querySelector('input[type="range"]');
+        function applyFilter(){
+            var computedFilters = '';
+            filterControls.forEach(function(item, index) {
+                    computedFilters += item.getAttribute('data-filter') + '(' + item.value + item.getAttribute('data-scale') + ') ';
+            });
+            image.style.filter = computedFilters;
+        };
+    </script>
+
+<!-- <div class="editPgFilterBtnsDiv">
     </center>
         <button type="submit" class= "btn btn-primary"  data-filter="NO_FILTER">no filter</button>
         <button type="submit" class= "btn btn-primary"  data-filter="COLORIZED">colorized</button>
@@ -50,6 +80,6 @@
         <button type="submit" class= "btn btn-primary"  data-filter="INVERT">invert</button>
         <button type="submit" class= "btn btn-primary"  data-filter="DELETE">delete</button>
     </center>
-</div>
+</div> -->
 {% endblock content %}
 

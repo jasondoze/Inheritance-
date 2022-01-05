@@ -52,6 +52,9 @@ def editartifact(request, id):
             }
             Artifact.objects.filter(artifact_id=id).update(**update_data)
             return HttpResponseRedirect(reverse('gallery'))
+
+def filters(request):
+    return render(request,'js.html')
     
    
 

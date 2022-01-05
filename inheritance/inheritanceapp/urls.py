@@ -9,6 +9,7 @@ urlpatterns = [
     path('ourstory/', views.ourstory, name='ourstory'),
     path('gallery/',views.imagedisplay, name='gallery'), 
     path('addartifact/', views.image_upload_view, name='addartifact'),
+    path('filters/', views.filters, name='filters'),
     # <int:editartifact>  
     path('editartifact/<int:id>', views.editartifact, name="editartifact"), 
 ]

@@ -120,7 +120,14 @@ button.btn.btn-primary:hover {
     transform: scale(1.15);
     background-color: darksalmon;
 }
-label {
+
+/* WHEN ACTIVE CODE BELOW OVERRIDES ALL TO NOT DISPLAY ANY LABELS */
+/* label {
+    display: none;
+} */
+
+/* CODE BELOW USES SPECIFICITY TO TARGET EXACT LABEL TO DISPLAY WHILE LABEL=FALSE APPLIED TO ATTRIBUTES IN FORMS FILE ALLOWS OTHER LABELS TO NOT DISPLAY */
+form#editArtifactFormDiv label {
     display: none;
 }
 h3 {
@@ -215,10 +222,14 @@ input#id_imgtitle, input#id_imgdesc, center {
     margin-bottom: .563rem;
     width: 50%;
 }
-input#id_image, input#file-upload-button {
+input#id_image {
     width: 25%;
     border-radius: .188rem;
     background-color: #FAFAFA;
+}
+input#file-upload-button,
+input#id_image.control-choosefile-btn {
+    width: 50%; 
 }
 .control-the-form,
 input#id_imgtitle,
@@ -255,8 +266,7 @@ input#id_imgtitle:focus, input#id_imgdesc:focus, input#id_image:focus, input#fil
 }
 input#id_imgtitle,
 input#id_imgdesc,
-input#id_image,
-input#file-upload-button {
+input#id_image {
   margin: 0 auto;
 }
 input#id_imgtitle:focus, input#id_imgdesc:focus, input#id_image:focus {
@@ -265,7 +275,8 @@ input#id_imgtitle:focus, input#id_imgdesc:focus, input#id_image:focus {
 }
 center,
 #preloadedImg,
-#preloadImgEditBtn {
+#preloadImgEditBtn,
+.editPgFilterBtnsDiv {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -276,17 +287,52 @@ h3.uploadSuccessText {
 }
 .uploadSuccessText,
 #preloadImgEditBtn,
-input#id_imgtitle,
 input#id_imgdesc {
     margin-top: .813rem;
+    margin-bottom: .813rem;
+}
+input#id_imgtitle {
+    margin-top: 6rem;
     margin-bottom: .813rem;
 }
 button#preloadImgEditBtn > a {
     color: black;
 }
+center form {
+    margin-top: -6rem;
+}
+.editPgFilterBtnsDiv {
+    margin-top: .05rem;
+}
 #editPageImageRender {
     width: 75%;
     margin-top: -25rem;
+}
+label.filterLabels {
+    font-size: small;
+    text-transform: lowercase;
+    font-variant: small-caps;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* CODE BELOW CHANGES COLOR OF BACKGROUND NOT CIRCULAR SLIDER ELEMENT */
+input[type='range'] {
+    -webkit-appearance: none;
+    background-color: black;
+    border-radius: .5rem;
+    outline: none;
+}
+input[type=range]::-webkit-slider-thumb {
+    /* CODE LINE BEFORE REQUIRED TO NOT DISPLAY SLIDERS BEFORE SUBSEQUENT THEN ADDS SLIDERS BACK IN; NOTE MAY NOT WORK IN MOZILLA DESPITE ADD ABOVE */
+    -webkit-appearance: none;
+    border: .2rem solid tomato;
+    border-radius: 50%;
+    height: 1rem;
+    width: 1rem;
+    background-color: white;
 }
 .createdAtClass {
     font-size: xx-small;

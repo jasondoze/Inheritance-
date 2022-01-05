@@ -8,9 +8,9 @@ from .models import *
 class ImageForm(forms.ModelForm):
     """Form for the image model"""
 
-    imgtitle = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "  enter title", "class": "control-the-form"}))
-    imgdesc = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "  enter description", "class": "control-the-form"}))
-    image = forms.FileField(widget=forms.ClearableFileInput(attrs={"class": "control-choosefile-btn"})) 
+    imgtitle = forms.CharField(label=False, widget=forms.TextInput(attrs={"placeholder": "  enter title", "class": "control-the-form"}))
+    imgdesc = forms.CharField(label=False, widget=forms.TextInput(attrs={"placeholder": "  enter description", "class": "control-the-form"}))
+    image = forms.FileField(label=False, widget=forms.ClearableFileInput(attrs={"class": "control-choosefile-btn"})) 
     class Meta:
         model = Artifact
         fields = ('artifact_id', 'imgtitle', 'imgdesc', 'image')

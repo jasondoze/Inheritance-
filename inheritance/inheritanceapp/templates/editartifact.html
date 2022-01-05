@@ -28,8 +28,8 @@
 <br/>
 <br/>
 <br/>
+
 <div id="addArtifactFormWrappingDiv">
-    
     <center>
         <img src="{{ artifact.image.url}}" alt="connect" id="editPageImageRender">
         <form method="post" enctype="multipart/form-data" id="editArtifactFormDiv">
@@ -41,22 +41,22 @@
 </div>
 <br/>
 <div class="editPgFilterBtnsDiv">
-    <label>Blur</label>
-    <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="blur" data-scale="px"/><br>
-    <label>Brightness</label>
-    <input type="range" min="0" max="200" value="0" step="1" onchange="applyFilter()" data-filter="brightness"  data-scale="%"><br>
-    <label>Contrast</label>
-    <input type="range" min="0" max="200" value="0" step="1" onchange="applyFilter()" data-filter="contrast" data-scale="%"/><br/>
-    <label>Grayscale</label>
-    <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="grayscale" data-scale="%"/><br>
-    <label>Invert</label>
-    <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="invert" data-scale="%"/><br/>
-    <label>Opacity</label>
-    <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="opacity" data-scale="%"/><br/>
-    <label>Saturate</label>
-    <input type="range" min="1" max="100" value="1" step="1" onchange="applyFilter()" data-filter="saturate" data-scale="px"/><br>
-    <label>Sepia</label>
-    <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="sepia" data-scale="px"/><br/>
+    <label class="filterLabels">Blur</label>
+    <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="blur" data-scale="px" class="filterSliders"/><br>
+    <label class="filterLabels">Brightness</label>
+    <input type="range" min="0" max="200" value="0" step="1" onchange="applyFilter()" data-filter="brightness"  data-scale="%" class="filterSliders"/><br>
+    <label class="filterLabels">Contrast</label>
+    <input type="range" min="0" max="200" value="0" step="1" onchange="applyFilter()" data-filter="contrast" data-scale="%" class="filterSliders"/><br/>
+    <label class="filterLabels">Grayscale</label>
+    <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="grayscale" data-scale="%" class="filterSliders"/><br>
+    <label class="filterLabels">Invert</label>
+    <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="invert" data-scale="%" class="filterSliders"/><br/>
+    <label class="filterLabels">Opacity</label>
+    <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="opacity" data-scale="%" class="filterSliders"/><br/>
+    <label class="filterLabels">Saturate</label>
+    <input type="range" min="1" max="100" value="1" step="1" onchange="applyFilter()" data-filter="saturate" data-scale="px" class="filterSliders"/><br>
+    <label class="filterLabels">Sepia</label>
+    <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="sepia" data-scale="px" class="filterSliders"/><br/>
 </div>
     
     <script type="text/javascript">

@@ -1,7 +1,7 @@
 from django.db import models
 from django.db.models.base import *
 from django.db.models.fields import DateTimeField
-from .utils import get_filtered_image
+# from .utils import get_filtered_image
 from PIL import Image
 import numpy as np
 from io import BytesIO
@@ -38,27 +38,27 @@ class Artifact(models.Model):
     class Meta:
        ordering = ['-created_at']
 
-    def save(self, *args, **kwargs):
+    # def save(self, *args, **kwargs):
         
-        # open image
-        pil_img = Image.open(self.image)
+    #     # open image
+    #     pil_img = Image.open(self.image)
 
-        # convert the image to array and do some processing
-        cv_img = np.array(pil_img)
-        # img = get_filtered_image(cv_img, self.action)
-        img = get_filtered_image(cv_img, 'NO_FILTER')
+    #     # convert the image to array and do some processing
+    #     cv_img = np.array(pil_img)
+    #     # img = get_filtered_image(cv_img, self.action)
+    #     img = get_filtered_image(cv_img, 'ACTION_CHOICES')
 
-        # convert back to pil image
-        im_pil = Image.fromarray(img)
+    #     # convert back to pil image
+    #     im_pil = Image.fromarray(img)
 
-        # save
-        buffer = BytesIO()
-        im_pil.save(buffer, format='png')
-        image_png = buffer.getvalue()
+    #     # save
+    #     buffer = BytesIO()
+    #     im_pil.save(buffer, format='png')
+    #     image_png = buffer.getvalue()
 
-        self.image.save(str(self.image), ContentFile(image_png), save=False)
+    #     self.image.save(str(self.image), ContentFile(image_png), save=False)
 
-        super().save(*args, **kwargs)
+    #     super().save(*args, **kwargs)
 
 
 

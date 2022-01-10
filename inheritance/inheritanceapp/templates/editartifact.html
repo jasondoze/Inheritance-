@@ -26,9 +26,6 @@
 <br/>
 <br/>
 <br/>
-<br/>
-<br/>
-
 <div id="addArtifactFormWrappingDiv">
     <center>
         <img src="{{ artifact.image.url}}" alt="connect" id="editPageImageRender">
@@ -39,7 +36,9 @@
           </form>
     </center>
 </div>
-<br/>
+
+
+ 
 <div class="editPgFilterBtnsDiv">
     <label class="filterLabels">Blur</label>
     <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="blur" data-scale="px" class="filterSliders"/><br>
@@ -54,32 +53,22 @@
     <label class="filterLabels">Opacity</label>
     <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="opacity" data-scale="%" class="filterSliders"/><br/>
     <label class="filterLabels">Saturate</label>
-    <input type="range" min="1" max="100" value="1" step="1" onchange="applyFilter()" data-filter="saturate" data-scale="px" class="filterSliders"/><br>
+    <input type="range" min="1" max="100" value="1" step="1" onchange="applyFilter()" data-filter="saturate" data-scale="" class="filterSliders"/><br>
     <label class="filterLabels">Sepia</label>
-    <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="sepia" data-scale="px" class="filterSliders"/><br/>
+    <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="sepia" data-scale="%" class="filterSliders"/><br/>
 </div>
     
     <script type="text/javascript">
-        var image = document.querySelector('img');
-        var filterControls = document.querySelector('input[type="range"]');
+        var image = document.getElementById("editPageImageRender");
+        var filterControls = document.querySelectorAll('input[type="range"]');
         function applyFilter(){
             var computedFilters = '';
             filterControls.forEach(function(item, index) {
                     computedFilters += item.getAttribute('data-filter') + '(' + item.value + item.getAttribute('data-scale') + ') ';
-            });
+            }); console.log(computedFilters);
             image.style.filter = computedFilters;
         };
     </script>
 
-<!-- <div class="editPgFilterBtnsDiv">
-    </center>
-        <button type="submit" class= "btn btn-primary"  data-filter="NO_FILTER">no filter</button>
-        <button type="submit" class= "btn btn-primary"  data-filter="COLORIZED">colorized</button>
-        <button type="submit" class= "btn btn-primary"  data-filter="GRAYSCALE">grayscale</button>
-        <button type="submit" class= "btn btn-primary"  data-filter="BINARY">binary</button>
-        <button type="submit" class= "btn btn-primary"  data-filter="INVERT">invert</button>
-        <button type="submit" class= "btn btn-primary"  data-filter="DELETE">delete</button>
-    </center>
-</div> -->
 {% endblock content %}
 

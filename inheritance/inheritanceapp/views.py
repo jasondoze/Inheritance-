@@ -46,15 +46,18 @@ def editartifact(request, id):
     if request.method == 'POST':
         form = EditImageForm(request.POST)
         if form.is_valid():
+        
             update_data = {
                 'imgdesc': form.cleaned_data['imgdesc'], 
                 'imgtitle': form.cleaned_data['imgtitle'],
-            }
+                'imgfilter': form.cleaned_data['imgfilter'],
+            } 
             Artifact.objects.filter(artifact_id=id).update(**update_data)
             return HttpResponseRedirect(reverse('gallery'))
-
-def filters(request):
-    return render(request,'js.html')
+        else:
+            return HttpResponseBadRequest()
+# def filters(request):
+#     return render(request,'js.html')
     
    
 

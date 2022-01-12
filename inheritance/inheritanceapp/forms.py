@@ -28,4 +28,4 @@ class EditImageForm(forms.ModelForm):
     """Form for the image model"""
     class Meta:
         model = Artifact
-        fields = ('imgtitle', 'imgdesc')
+        fields = ('imgtitle', 'imgdesc', 'imgfilter' )

@@ -23,6 +23,7 @@ class Artifact(models.Model):
     artifact_id = models.AutoField(primary_key=True)
     imgtitle = models.CharField(max_length=11)
     imgdesc = models.CharField(max_length=24)
+    imgfilter = models.CharField(default="", max_length=500)
     image=models.ImageField(upload_to='images/')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

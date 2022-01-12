@@ -13,13 +13,12 @@
 <br/>
 <br/>
 
-<!-- Rows and columns for the gallery page that display uploaded images into a 4 column gallery -->
+<!-- Rows and columns for the gallery page that display uploaded images into a 3 column gallery -->
 <div class="container">
     <div class="row">
 {% for results in Artifact %}
     <div class="col-4">
-        <h3 style="color: rgb(10, 233, 199)">{{ results.imgtitle }}</h3>
-<!-- {{ results.artifact_id }}  -->
+        <h3 style="color: rgb(87, 3, 3)">{{ results.imgtitle }}</h3>
         <img src="{{results.image.url}}" width="375" alt="{{results.imgtitle}}" class="img-thumbnail" style="filter:{{results.imgfilter}}">
 <br/>
 <b>{{ results.imgdesc }}</b> 

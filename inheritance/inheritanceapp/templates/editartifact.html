@@ -33,9 +33,7 @@
             {% csrf_token %}
             {{ form }}
             <button type="submit" id="editArtifactUploadBtn">Save To Gallery</button>
-
-            
-          </form>
+        </form>
     </center>
 </div>
 
@@ -43,9 +41,9 @@
  
 <div class="editPgFilterBtnsDiv">
     <label class="filterLabels">Blur</label>
-    <input type="range" min="1" max="50" value="0" step="1" onchange="applyFilter()" data-filter="blur" data-scale="px" class="filterSliders"/><br>
+    <input type="range" min="0" max="20" value="0" step="1" onchange="applyFilter()" data-filter="blur" data-scale="px" class="filterSliders"/><br>
     <label class="filterLabels">Brightness</label>
-    <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="brightness"  data-scale="%" class="filterSliders"/><br>
+    <input type="range" min="50" max="100" value="0" step="1" onchange="applyFilter()" data-filter="brightness"  data-scale="%" class="filterSliders"/><br>
     <label class="filterLabels">Contrast</label>
     <input type="range" min="50" max="100" value="0" step="1" onchange="applyFilter()" data-filter="contrast" data-scale="%" class="filterSliders"/><br/>
     <label class="filterLabels">Grayscale</label>
@@ -53,20 +51,18 @@
     <label class="filterLabels">Invert</label>
     <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="invert" data-scale="%" class="filterSliders"/><br/>
     <label class="filterLabels">Opacity</label>
-    <input type="range" min="15" max="100" value="0" step="1" onchange="applyFilter()" data-filter="opacity" data-scale="%" class="filterSliders"/><br/>
+    <input type="range" min="75" max="100" value="0" step="1" onchange="applyFilter()" data-filter="opacity" data-scale="%" class="filterSliders"/><br/>
     <label class="filterLabels">Saturate</label>
-    <input type="range" min="1" max="100" value="1" step="1" onchange="applyFilter()" data-filter="saturate" data-scale="" class="filterSliders"/><br>
+    <input type="range" min="1" max="15" value="1" step="1" onchange="applyFilter()" data-filter="saturate" data-scale="" class="filterSliders"/><br>
     <label class="filterLabels">Sepia</label>
     <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="sepia" data-scale="%" class="filterSliders"/><br/>
 </div>
     
     <script type="text/javascript">
+        // This function applies the filter to the image by scanning the filter controls and applying the updated filter text string to the image.
         var image = document.getElementById("editPageImageRender");
         var filterControls = document.querySelectorAll('input.filterSliders');
-       
-  
         function applyFilter(){
-
             var computedFilters = '';
             filterControls.forEach(function(item, index) {
                     computedFilters += item.getAttribute('data-filter') + '(' + item.value + item.getAttribute('data-scale') + ') ';
@@ -77,17 +73,5 @@
     </script>
 
 {% endblock content %}
-<!-- <!DOCTYPE html>
-<body>
- <form>
-  <input type = "text" id="imgfilter">
-  <button type = "button" onclick="update()">Auto-fill form field</button>
- </form>
- <script>
-  function update(){
-   document.getElementById("input").value = "This is an auto-generated value";
-  }
- </script>
-</body>
-</html> -->
+
 

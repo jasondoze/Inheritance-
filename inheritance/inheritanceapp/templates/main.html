@@ -30,6 +30,18 @@
  </head>
  
  <body>
+    <!-- /* HTML --- This is a translucent glass container that may look cool on the landing page...maybe to go behind the buttons or something...
+    <div class="container">
+    <div class="center">
+      <button class="btn">
+        <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+          <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+          <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+        </svg>
+        <span>HOVER ME</span>
+      </button>
+    </div>
+    </div> */ -->
      <div id="emptyDivOnTopOfTitleLogo"></div>
     <div id="titleLogoDiv">
      <h1 id="inheritanceTitle">INHERITANCE</h1>
@@ -41,5 +53,13 @@
      {% block content %} {% endblock content %}
  
      <script src="{% static 'script.js' %}"></script>
+
+     <!-- <script type="text/javascript">
+    This is JavaScript code that will run the dark mode toggle button. https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp
+        function myFunction() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+        }
+    </script> -->
  </body>
  </html>

@@ -1,31 +1,31 @@
 {% extends 'main.html' %}
 
 {% block content %}
-<br/>
-<br/>
-<button type="button" class="editPgHomeBtn galleryPageHomeBtn"> 
+<br />
+<br />
+<button type="button" class="editPgHomeBtn galleryPageHomeBtn">
     <a href="{% url 'landingpage' %}" class="galleryPageHomeBtn">HOME</a>
 </button>
-<br/>
-<br/>
-<button type="button" title="Our Story Button"> 
+<br />
+<br />
+<button type="button" title="Our Story Button">
     <a href="{% url 'ourstory' %}">OUR STORY</a>
 </button>
-<br/>
-<br/>
-<button type="button"> 
+<br />
+<br />
+<button type="button">
     <a href="{% url 'addartifact' %}">ADD ARTIFACT</a>
 </button>
-<br/>
-<br/>
-<button type="button" class="editPgGalleryBtn"> 
+<br />
+<br />
+<button type="button" class="editPgGalleryBtn">
     <a href="{% url 'gallery' %}">GALLERY</a>
 </button>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+<br />
+<br />
+<br />
+<br />
+<br />
 <div id="addArtifactFormWrappingDiv">
     <center>
         <img src="{{ artifact.image.url}}" alt="connect" id="editPageImageRender">
@@ -33,45 +33,98 @@
             {% csrf_token %}
             {{ form }}
             <button type="submit" id="editArtifactUploadBtn">Save To Gallery</button>
+            <button type="submit" id="editArtifactDeleteBtn">Delete & Reset</button>
         </form>
     </center>
 </div>
 
 
- 
-<div class="editPgFilterBtnsDiv">
-    <label class="filterLabels">Blur</label>
-    <input type="range" min="0" max="20" value="0" step="1" onchange="applyFilter()" data-filter="blur" data-scale="px" class="filterSliders"/><br>
-    <label class="filterLabels">Brightness</label>
-    <input type="range" min="50" max="100" value="0" step="1" onchange="applyFilter()" data-filter="brightness"  data-scale="%" class="filterSliders"/><br>
-    <label class="filterLabels">Contrast</label>
-    <input type="range" min="50" max="100" value="0" step="1" onchange="applyFilter()" data-filter="contrast" data-scale="%" class="filterSliders"/><br/>
-    <label class="filterLabels">Grayscale</label>
-    <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="grayscale" data-scale="%" class="filterSliders"/><br>
-    <label class="filterLabels">Invert</label>
-    <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="invert" data-scale="%" class="filterSliders"/><br/>
-    <label class="filterLabels">Opacity</label>
-    <input type="range" min="75" max="100" value="0" step="1" onchange="applyFilter()" data-filter="opacity" data-scale="%" class="filterSliders"/><br/>
-    <label class="filterLabels">Saturate</label>
-    <input type="range" min="1" max="15" value="1" step="1" onchange="applyFilter()" data-filter="saturate" data-scale="" class="filterSliders"/><br>
-    <label class="filterLabels">Sepia</label>
-    <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="sepia" data-scale="%" class="filterSliders"/><br/>
+<div class="container editPgFilterBtnsDiv">
+    <div class="row allFiltersCategoriesRow">
+        <div class="col-md filterCategoryDivs filtersDiv">
+            <label class="filterLabels">Blur</label>
+            <input type="range" min="0" max="20" value="0" step="1" onchange="applyFilter()" data-filter="blur"
+                data-scale="px" class="filterSliders" /><br>
+            <label class="filterLabels">Brightness</label>
+            <input type="range" min="50" max="100" value="0" step="1" onchange="applyFilter()" data-filter="brightness"
+                data-scale="%" class="filterSliders" /><br>
+            <label class="filterLabels">Contrast</label>
+            <input type="range" min="50" max="100" value="0" step="1" onchange="applyFilter()" data-filter="contrast"
+                data-scale="%" class="filterSliders" /><br />
+            <label class="filterLabels">Grayscale</label>
+            <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="grayscale"
+                data-scale="%" class="filterSliders" /><br>
+            <label class="filterLabels">Invert</label>
+            <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="invert"
+                data-scale="%" class="filterSliders" /><br />
+            <label class="filterLabels">Opacity</label>
+            <input type="range" min="75" max="100" value="0" step="1" onchange="applyFilter()" data-filter="opacity"
+                data-scale="%" class="filterSliders" /><br />
+            <label class="filterLabels">Saturate</label>
+            <input type="range" min="1" max="15" value="1" step="1" onchange="applyFilter()" data-filter="saturate"
+                data-scale="" class="filterSliders" /><br>
+            <label class="filterLabels">Sepia</label>
+            <input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="sepia"
+                data-scale="%" class="filterSliders" /><br />
+        </div>
+
+
+        <div class="col-md filterCategoryDivs categoriesDiv">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">personal story</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">historical deeds
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">vulnerable hope
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">still articulation
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">default response
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">profound artistry
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">inspired apology
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">rampant faith
+                </label>
+            </div>
+        </div>
+    </div>
 </div>
-    
-    <script type="text/javascript">
-        // This function applies the filter to the image by scanning the filter controls and applying the updated filter text string to the image.
-        var image = document.getElementById("editPageImageRender");
-        var filterControls = document.querySelectorAll('input.filterSliders');
-        function applyFilter(){
-            var computedFilters = '';
-            filterControls.forEach(function(item, index) {
-                    computedFilters += item.getAttribute('data-filter') + '(' + item.value + item.getAttribute('data-scale') + ') ';
-            }); console.log(computedFilters);
-            image.style.filter = computedFilters;
-            document.getElementById("id_imgfilter").value = computedFilters;
-        };
-    </script>
+
+<script type="text/javascript">
+    // This function applies the filter to the image by scanning the filter controls and applying the updated filter text string to the image.
+    var image = document.getElementById("editPageImageRender");
+    var filterControls = document.querySelectorAll('input.filterSliders');
+    function applyFilter() {
+        var computedFilters = '';
+        filterControls.forEach(function (item, index) {
+            computedFilters += item.getAttribute('data-filter') + '(' + item.value + item.getAttribute('data-scale') + ') ';
+        }); console.log(computedFilters);
+        image.style.filter = computedFilters;
+        document.getElementById("id_imgfilter").value = computedFilters;
+    };
+</script>
 
 {% endblock content %}
-
-

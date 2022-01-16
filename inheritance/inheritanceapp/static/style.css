@@ -1,4 +1,5 @@
 /* This css file is where our external styles are being pulled from */
+
 body {
     background-color: #FAFAFA;
     background-image: url("/static/cleanse.jpg") no-repeat;
@@ -97,10 +98,8 @@ button:hover > a {
 .editPgGalleryBtn {
     margin-bottom: 2.938rem;
 }
-.editPgFilterBtnsDiv {
-   text-align: center;
-   margin-top: -1.5rem;
-   margin-bottom: 2rem;
+button#editArtifactUploadBtn {
+   margin-right: -2.5rem;
 }
 button.btn.btn-primary {
     font-size: x-small;
@@ -216,6 +215,9 @@ button:hover, #preloadImgEditBtn > a:hover {
     font-weight: bold;
 } */
 
+input#id_imgfilter {
+    display: none;
+}
 input#id_imgtitle, input#id_imgdesc, center {
     display: block;
     border-radius: .813rem;
@@ -292,7 +294,7 @@ input#id_imgdesc {
     margin-bottom: .813rem;
 }
 input#id_imgtitle {
-    margin-top: 6rem;
+    margin-top: 7rem;
     margin-bottom: .813rem;
 }
 button#preloadImgEditBtn > a {
@@ -335,9 +337,38 @@ input[type=range]::-webkit-slider-thumb {
     background-color: white;
 }
 .createdAtClass {
-    font-size: xx-small;
-    color: darkturquoise;
-    text-shadow: .016rem .016rem black;
+   display: none;
+}
+.allFiltersCategoriesRow {
+    margin-top: 4%;
+    margin-left: 15%;
+}
+.editPgFilterBtnsDiv {
+   margin-top: -1.5rem;
+   margin-bottom: 2rem;
+}
+.filtersDiv {
+    text-align: center;
+}
+.form-check {
+    margin-left: -10rem;
+}
+input.form-check-input#flexCheckDefault {
+    border-radius: 50%;
+    padding: .75rem;
+    border: black;
+    background-color: tomato;
+    margin-left: 10rem;
+}
+.categoriesDiv {
+    margin-top: 3rem;
+    margin-left: -13rem;
+}
+label.form-check-label {
+    margin-left: .5rem;
+    margin-bottom: .5rem;
+    font-variant: small-caps;
+    font-size: small;
 }
 
 /* UNSURE IF WILL READD ADD ARTIFACT BTN */

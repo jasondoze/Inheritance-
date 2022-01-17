@@ -1,39 +1,39 @@
 /* This css file is where our external styles are being pulled from */
 
 body {
-    background-color: #FAFAFA;
-    background-image: url("/static/cleanse.jpg") no-repeat;
-    background-size: cover;
-    z-index: -1;
+  background-color: #fafafa;
+  background-image: url("/static/cleanse.jpg") no-repeat;
+  background-size: cover;
+  z-index: -1;
 }
 #landingPageAllContentButImgDiv {
-    position: relative; 
-    z-index: 3;
+  position: relative;
+  z-index: 3;
 }
 #landingPageImgOnlyDiv {
-    position: absolute; 
-    z-index: -1;  
-    margin-top: -20rem;
+  position: absolute;
+  z-index: -1;
+  margin-top: -20rem;
 }
 #dummyImgOnLandingPage {
-    height: 100%;
+  height: 100%;
 }
 .landingPgArtifactDescr {
-    width: 25%;
-    color: wheat;
-    font-size: smaller;
-    text-transform: lowercase;
-    text-shadow: .031rem .031rem black;
-    text-align: justify;
+  width: 25%;
+  color: wheat;
+  font-size: smaller;
+  text-transform: lowercase;
+  text-shadow: 0.031rem 0.031rem black;
+  text-align: justify;
 
-    position: absolute;
-    right: 2.313rem;
-    bottom: -15.313rem;
+  position: absolute;
+  right: 2.313rem;
+  bottom: -15.313rem;
 }
 #titleLogoDiv,
 h1#inheritanceTitle,
 img#inheritanceTitle {
-    display: inline;
+  display: inline;
 }
 button,
 #inheritanceTitle,
@@ -41,32 +41,33 @@ button,
 p#ourStoryIntroSentence,
 .ourStorySubHeads,
 .ourStoryParagraphs,
-p#conceptParagraph  {
-    margin-left: 2.75rem;
-    margin-right: 2.75rem;
-    z-index: 1;
+p#conceptParagraph {
+  margin-left: 2.75rem;
+  margin-right: 2.75rem;
+  z-index: 1;
 }
 .ourStoryParagraphs {
-    text-align: justify;
+  text-align: justify;
 }
 #emptyDivOnTopOfTitleLogo {
-    margin-bottom: 2.75rem;
+  margin-bottom: 2.75rem;
 }
 #inheritanceTitle {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: xx-large;
-    margin-bottom: 1.375rem;
-    /* text-shadow: .048rem .048rem wheat; */
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: xx-large;
+  margin-bottom: 1.375rem;
+  /* text-shadow: .048rem .048rem wheat; */
 }
 img#inheritanceLogo {
-    width: 3.563rem; 
-    margin-left: -2.313rem;
-    margin-top: .688rem;
-    margin-bottom: 1.375rem;
-    /* filter: drop-shadow(.063rem .063rem wheat) */
+  width: 3.563rem;
+  margin-left: -2.313rem;
+  margin-top: 0.688rem;
+  margin-bottom: 1.375rem;
+  /* filter: drop-shadow(.063rem .063rem wheat) */
 }
 
- /* NOT USING IN LIEU OF LOGO */
+/* NOT USING IN LIEU OF LOGO */
 /* #inheritanceTagline {
     margin-top: -.688rem;
     font-family: cursive;
@@ -75,49 +76,49 @@ img#inheritanceLogo {
 } */
 
 button {
-    width: 9rem;
-    border-radius: 4.188rem;
-    border-color: tomato;
-    background-color: white; 
-    margin-bottom: -1.375rem; 
+  width: 9rem;
+  border-radius: 4.188rem;
+  border-color: tomato;
+  background-color: white;
+  margin-bottom: -1.375rem;
 }
 button > a {
-    text-decoration: none;
-    color: darksalmon;
+  text-decoration: none;
+  color: darksalmon;
 }
 button:hover > a {
-    color: tomato;
+  color: tomato;
 }
 .galleryPageHomeBtn {
-    margin-bottom: 1.375rem;
+  margin-bottom: 1.375rem;
 }
 .editPgHomeBtn {
-    margin-bottom: -2.75rem;
-    margin-top: -31.25rem;
+  margin-bottom: -2.75rem;
+  margin-top: -31.25rem;
 }
 .editPgGalleryBtn {
-    margin-bottom: 2.938rem;
+  margin-bottom: 2.938rem;
 }
 button#editArtifactUploadBtn {
-   margin-right: -2.5rem;
+  margin-right: -2.5rem;
 }
 button.btn.btn-primary {
-    font-size: x-small;
-    color: tomato;
-    text-shadow: .016rem .016rem black;
-    background-color: crimson;
-    border: .063rem solid tomato;
-    box-shadow: .016rem .016rem .016rem .016rem black;
+  font-size: x-small;
+  color: tomato;
+  text-shadow: 0.016rem 0.016rem black;
+  background-color: crimson;
+  border: 0.063rem solid tomato;
+  box-shadow: 0.016rem 0.016rem 0.016rem 0.016rem black;
 
-    padding: .188rem;
-    width: 4.188rem;
-    display: inline-block;
-    margin-left: .094rem;
-    margin-right: .094rem;
+  padding: 0.188rem;
+  width: 4.188rem;
+  display: inline-block;
+  margin-left: 0.094rem;
+  margin-right: 0.094rem;
 }
 button.btn.btn-primary:hover {
-    transform: scale(1.15);
-    background-color: darksalmon;
+  transform: scale(1.15);
+  background-color: darksalmon;
 }
 
 /* WHEN ACTIVE CODE BELOW OVERRIDES ALL TO NOT DISPLAY ANY LABELS */
@@ -127,86 +128,88 @@ button.btn.btn-primary:hover {
 
 /* CODE BELOW USES SPECIFICITY TO TARGET EXACT LABEL TO DISPLAY WHILE LABEL=FALSE APPLIED TO ATTRIBUTES IN FORMS FILE ALLOWS OTHER LABELS TO NOT DISPLAY */
 form#editArtifactFormDiv label {
-    display: none;
+  display: none;
 }
 h3 {
-    text-transform: lowercase;
-    font-size: large;
-    margin-left: .813rem;
+  text-transform: lowercase;
+  font-size: large;
+  margin-left: 0.813rem;
 }
 b {
-    font-weight: lighter;
-    text-transform: lowercase;
-    margin-left: .813rem;
+  font-weight: lighter;
+  text-transform: lowercase;
+  margin-left: 0.813rem;
 }
 #symbolicRelease {
-    width: 50%;
-    border-radius: 4.188rem;
+  width: 50%;
+  border-radius: 4.188rem;
 }
 form > input#symbolicRelease:focus {
-   outline: none;
+  outline: none;
 }
 form > input#symbolicRelease:focus {
-    border: .072rem dotted tomato;
-    background-color: whitesmoke;
+  border: 0.072rem dotted tomato;
+  background-color: whitesmoke;
 }
 form > input#symbolicRelease::placeholder {
-    font-size: smaller;
+  font-size: smaller;
 }
 #symRelSubmitBtn {
-    border-radius: 4.188rem;
-    width: 9rem;
+  border-radius: 4.188rem;
+  width: 9rem;
 }
 #symRelSubmitBtn:hover {
-   color: tomato;
-   border-color: tomato;
+  color: tomato;
+  border-color: tomato;
 }
 /* NEXT 2 LINES NICE BIT OF CSS ADDED TO THE TOOLKIT */
-input[type=text]#symbolicRelease {
-    padding-left: .813rem;
+input[type="text"]#symbolicRelease {
+  padding-left: 0.813rem;
 }
 #imgOnLandingPage {
-    width: 100%;
-    /* margin-top: 1.5rem; */
-    margin-top: 0;
-    margin-right: 2.75rem;
-    /* margin-bottom: .688rem; */
+  width: 100%;
+  /* margin-top: 1.5rem; */
+  margin-top: 0;
+  margin-right: 2.75rem;
+  /* margin-bottom: .688rem; */
 }
 p#ourStoryIntroSentence {
-    text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-weight: bold;
-    color: whitesmoke;
-    text-shadow: .016rem .016rem black;
-    font-size: 10.438rem;
-    text-transform: uppercase;
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  color: whitesmoke;
+  text-shadow: 0.016rem 0.016rem black;
+  font-size: 10.438rem;
+  text-transform: uppercase;
 
-    margin-top: -1.688rem;
-    margin-bottom: -3.688rem;
+  margin-top: -1.688rem;
+  margin-bottom: -3.688rem;
 }
 .ourStorySubHeads {
-    font-size: large;
-    margin-bottom: -.063rem;
-    color: black;
-    text-shadow: .016rem .016rem black;
+  font-size: large;
+  margin-bottom: -0.063rem;
+  color: black;
+  text-shadow: 0.016rem 0.016rem black;
 }
 #ourStoryJoinHead {
-    margin-bottom: -1.063rem;
+  margin-bottom: -1.063rem;
 }
 .ourStoryParagraphs {
-    margin-right: 2.75rem;
-    text-align: justify;
+  margin-right: 2.75rem;
+  text-align: justify;
 }
 #ourStoryAddArtifactPageLink {
-    text-decoration: none;
-    font-size: small;
-    color: darksalmon;
-    text-shadow: .016rem .016rem black;
+  text-decoration: none;
+  font-size: small;
+  color: darksalmon;
+  text-shadow: 0.016rem 0.016rem black;
 }
 #ourStoryAddArtifactPageLink:hover,
-button:hover, #preloadImgEditBtn > a:hover {
-    color: tomato;
-} 
+button:hover,
+#preloadImgEditBtn > a:hover {
+  color: tomato;
+}
 
 /* DECIDED NOT TO INCLUDE LABELS IN LIEU OF PLACEHOLDER TEXT */
 /* label {
@@ -216,44 +219,46 @@ button:hover, #preloadImgEditBtn > a:hover {
 } */
 
 input#id_imgfilter {
-    display: none;
+  display: none;
 }
-input#id_imgtitle, input#id_imgdesc, center {
-    display: block;
-    border-radius: .813rem;
-    margin-bottom: .563rem;
-    width: 50%;
+input#id_imgtitle,
+input#id_imgdesc,
+center {
+  display: block;
+  border-radius: 0.813rem;
+  margin-bottom: 0.563rem;
+  width: 50%;
 }
 input#id_image {
-    width: 25%;
-    border-radius: .188rem;
-    background-color: #FAFAFA;
+  width: 25%;
+  border-radius: 0.188rem;
+  background-color: #fafafa;
 }
 input#file-upload-button,
 input#id_image.control-choosefile-btn {
-    width: 50%; 
+  width: 50%;
 }
 .control-the-form,
 input#id_imgtitle,
 input#id_imgdesc {
-    font-size: x-small;
-    padding: .563rem;
+  font-size: x-small;
+  padding: 0.563rem;
 }
 input#file-upload-button {
-    background-color: tomato;
+  background-color: tomato;
 }
 .control-choosefile-btn {
   color: red;
   font-size: small;
   text-transform: lowercase;
-  text-shadow: .017rem .017rem black;
+  text-shadow: 0.017rem 0.017rem black;
 }
 /* NEED TO DEFINE BOX SHADOW BELOW FOR BEST PRACTICES */
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active  {
-    -webkit-box-shadow: 0 0 0 1.875rem white inset !important;
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1.875rem white inset !important;
 }
 
 /* PLACEHOLDERS WORKING AGAIN PER CURRENT CODE */
@@ -263,17 +268,22 @@ input:-webkit-autofill:active  {
     padding-top: .438rem;
 } */
 
-input#id_imgtitle:focus, input#id_imgdesc:focus, input#id_image:focus, input#file-upload-button:focus {
-    outline: none;
+input#id_imgtitle:focus,
+input#id_imgdesc:focus,
+input#id_image:focus,
+input#file-upload-button:focus {
+  outline: none;
 }
 input#id_imgtitle,
 input#id_imgdesc,
 input#id_image {
   margin: 0 auto;
 }
-input#id_imgtitle:focus, input#id_imgdesc:focus, input#id_image:focus {
+input#id_imgtitle:focus,
+input#id_imgdesc:focus,
+input#id_image:focus {
   border-color: tomato;
-  border: .078rem dotted darksalmon;
+  border: 0.078rem dotted darksalmon;
 }
 center,
 #preloadedImg,
@@ -284,91 +294,97 @@ center,
   margin-right: auto;
 }
 h3.uploadSuccessText {
-   text-align: center;
-   font-size: small;
+  text-align: center;
+  font-size: small;
 }
 .uploadSuccessText,
 #preloadImgEditBtn,
 input#id_imgdesc {
-    margin-top: .813rem;
-    margin-bottom: .813rem;
+  margin-top: 0.813rem;
+  margin-bottom: 0.813rem;
 }
 input#id_imgtitle {
-    margin-top: 7rem;
-    margin-bottom: .813rem;
+  margin-top: 7rem;
+  margin-bottom: 0.813rem;
 }
 button#preloadImgEditBtn > a {
-    color: black;
+  color: black;
 }
 center form {
-    margin-top: -6rem;
+  margin-top: -6rem;
 }
 .editPgFilterBtnsDiv {
-    margin-top: .05rem;
+  margin-top: 0.05rem;
 }
 #editPageImageRender {
-    width: 75%;
-    margin-top: -25rem;
+  width: 75%;
+  margin-top: -25rem;
 }
 label.filterLabels {
-    font-size: small;
-    text-transform: lowercase;
-    font-variant: small-caps;
+  font-size: small;
+  text-transform: lowercase;
+  font-variant: small-caps;
 
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* CODE BELOW CHANGES COLOR OF BACKGROUND NOT CIRCULAR SLIDER ELEMENT */
-input[type='range'] {
-    -webkit-appearance: none;
-    background-color: black;
-    border-radius: .5rem;
-    outline: none;
+input[type="range"] {
+  -webkit-appearance: none;
+  background-color: rgb(87, 3, 3);
+  border-radius: 0.5rem;
+  outline: none;
 }
-input[type=range]::-webkit-slider-thumb {
-    /* CODE LINE BEFORE REQUIRED TO NOT DISPLAY SLIDERS BEFORE SUBSEQUENT THEN ADDS SLIDERS BACK IN; NOTE MAY NOT WORK IN MOZILLA DESPITE ADD ABOVE */
-    -webkit-appearance: none;
-    border: .2rem solid tomato;
-    border-radius: 50%;
-    height: 1rem;
-    width: 1rem;
-    background-color: white;
+input[type="range"]::-webkit-slider-thumb {
+  /* CODE LINE BEFORE REQUIRED TO NOT DISPLAY SLIDERS BEFORE SUBSEQUENT THEN ADDS SLIDERS BACK IN; NOTE MAY NOT WORK IN MOZILLA DESPITE ADD ABOVE */
+  -webkit-appearance: none;
+  border: 0.2rem solid tomato;
+  border-radius: 50%;
+  height: 1rem;
+  width: 1rem;
+  background-color: tomato;
 }
 .createdAtClass {
-   display: none;
+  display: none;
 }
 .allFiltersCategoriesRow {
-    margin-top: 4%;
-    margin-left: 15%;
+  margin-top: 4%;
+  margin-left: 15%;
 }
 .editPgFilterBtnsDiv {
-   margin-top: -1.5rem;
-   margin-bottom: 2rem;
+  margin-top: -1.5rem;
+  margin-bottom: 2rem;
 }
 .filtersDiv {
-    text-align: center;
+  text-align: center;
 }
 .form-check {
-    margin-left: -10rem;
+  margin-left: -10rem;
 }
 input.form-check-input#flexCheckDefault {
-    border-radius: 50%;
-    padding: .75rem;
-    border: black;
-    background-color: tomato;
-    margin-left: 10rem;
+  border-radius: 50%;
+  padding: 0.55rem;
+  border: black;
+  background-color: tomato;
+  margin-left: 10rem;
+}
+input.form-check-input#flexCheckDefault:hover {
+  transform: scale(1.5);
+}
+input.form-check-input#flexCheckDefault:focus {
+  background-color: rgb(87, 3, 3);
 }
 .categoriesDiv {
-    margin-top: 3rem;
-    margin-left: -13rem;
+  margin-top: 3rem;
+  margin-left: -13rem;
 }
 label.form-check-label {
-    margin-left: .5rem;
-    margin-bottom: .5rem;
-    font-variant: small-caps;
-    font-size: small;
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-variant: small-caps;
+  font-size: small;
 }
 
 /* UNSURE IF WILL READD ADD ARTIFACT BTN */
@@ -388,20 +404,19 @@ label.form-check-label {
 
 /* MEDIA QUERIES FOR HIGH DEF MOCK LANDING PAGE CONTENT */
 @media only screen and (max-width: 498px) {
-.landingPgArtifactDescr  {
+  .landingPgArtifactDescr {
     min-width: 80%;
     bottom: -11.5rem;
-    }
+  }
 }
 /* CURRENTLY SET TO HIDE ALL BODY CONTENT AT THIS SCREEN SIZE IDEALLY WOULD INSTEAD DISPLAY TEXT PROMPT TO VISIT SITE ON A LARGER SCREEN/DEVICE */
 @media only screen and (max-width: 486px) {
-body  {
-  visibility: hidden;
-    }
+  body {
+    visibility: hidden;
+  }
 }
 
-
- /* CSS --- This is code to make the buttons have an animated effect, maybe a cool aesthetic upgrade...100 Days CSS Button N 045 (button name) https://www.sliderrevolution.com/resources/css-button-hover-effects/ (button site)
+/* CSS --- This is code to make the buttons have an animated effect, maybe a cool aesthetic upgrade...100 Days CSS Button N 045 (button name) https://www.sliderrevolution.com/resources/css-button-hover-effects/ (button site)
 @import url('https://fonts.googleapis.com/css?family=Lato:100&display=swap'); */
 
 /* body, html {

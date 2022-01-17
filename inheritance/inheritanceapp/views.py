@@ -5,14 +5,14 @@ from django.urls import reverse
 from django.shortcuts import render
 from .models import *
 from .forms import EditorForm, ImageForm, EditImageForm
+import random
 
 
 # This function takes in a request and returns the template landingpage.html with an object of all artifacts ordered by their artifact_id. The code is using the objects method to get all artifacts from the database, then it orders them by their artifact_id which will be used later on when rendering the page. The code returns a landingpage.html template that contains the list of all artifacts. 
 def landingpage(request):
    artifact = Artifact.objects.all().order_by('artifact_id')
-   return render(request=request, template_name='landingpage.html', context={'artifact': artifact})
-
-# This function renders the ourstory html  
+   background = random.choice(artifact)
+   return render(request=request, template_name='landingpage.html', context={'background': background}) # This function renders the ourstory html  
 def ourstory(request):
     return render(request,'ourstory.html')
 

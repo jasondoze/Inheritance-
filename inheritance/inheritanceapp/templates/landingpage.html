@@ -1,43 +1,52 @@
-    <!-- Sets the stage for the inheritance experience -->
-    {% extends 'main.html' %}
-    {% load static %}
-   
-   
-    {% block content%}
-    <div id="landingPageAllContentButImgDiv">
-    <button type="button" title="Our Story Button"> 
-        <a href="{% url 'ourstory' %}">OUR STORY</a>
-    </button>
-    <br/>
-    <br/>
-    <button type="button"> 
-        <a href="{% url 'gallery' %}">GALLERY</a>
-    </button>
-    <br/>
-    <br/>
-    <button type="button"> 
-        <a href="{% url 'addartifact' %}">ADD ARTIFACT</a>
-    </button>
-    <br/>
-    <br/>
-    <form>
-        <input type="text" id="symbolicRelease" name="symbolic_release" placeholder="symbolic release: unburdening from ..." title="SYMBOLIC RELEASE" />
-        <input type="submit" id="symRelSubmitBtn" name="sym_rel_submit_btn" value="SUBMIT" />
-    </form>
-    <p class="landingPgArtifactDescr"> Praesent sollicitudin sem vel arcu vulputate imperdiet. Praesent porta sem ac neque ultrices tempor. Nullam augue tellus, facilisis vel sapien sodales, gravida mollis magna.</p>
-    </div>
- 
-    <div id="landingPageImgOnlyDiv">
-    <!-- single row/col to contain dynamic randomized image on landing page pulled from images uploaded to gallery -->
-       <img src="{% static 'cleanse.jpg' %}" alt="Dummy Image" width="100%" id="dummyImgOnLandingPage" />
-   </div>
+<!-- Sets the stage for the inheritance experience -->
+{% extends 'main.html' %} {% load static %} {% block content%}
+<div id="landingPageAllContentButImgDiv">
+  <button type="button" title="Our Story Button">
+    <a href="{% url 'ourstory' %}">OUR STORY</a>
+  </button>
+  <br />
+  <br />
+  <button type="button">
+    <a href="{% url 'gallery' %}">GALLERY</a>
+  </button>
+  <br />
+  <br />
+  <button type="button">
+    <a href="{% url 'addartifact' %}">ADD ARTIFACT</a>
+  </button>
+  <br />
+  <br />
 
-  
-    {% endblock content %}
-    
+  <form>
+    <input
+      type="text"
+      id="symbolicRelease"
+      name="symbolic_release"
+      placeholder="symbolic release: unburdening from ..."
+      title="SYMBOLIC RELEASE"
+    />
+    <input
+      type="submit"
+      id="symRelSubmitBtn"
+      name="sym_rel_submit_btn"
+      value="SUBMIT"
+    />
+  </form>
+  <p class="landingPgArtifactDescr">
+    Praesent sollicitudin sem vel arcu vulputate imperdiet. Praesent porta sem
+    ac neque ultrices tempor. Nullam augue tellus, facilisis vel sapien sodales,
+    gravida mollis magna.
+  </p>
+</div>
 
-   
-      
+<div id="landingPageImgOnlyDiv">
+  <!-- single row/col to contain dynamic randomized image on landing page pulled from images uploaded to gallery -->
+  <img
+    src="{{background.image.url}}"
+    alt="Dummy Image"
+    width="100%"
+    id="dummyImgOnLandingPage"
+  />
+</div>
 
-
-
+{% endblock content %}

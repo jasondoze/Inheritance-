@@ -1,12 +1,17 @@
 {% extends 'main.html' %} {% load static %} {% block content %}
-<button type="button">
-  <a href="{% url 'addartifact' %}">ADD ARTIFACT</a>
-</button>
-<br />
-<br />
-<button type="button" class="galleryPageHomeBtn">
-  <a href="{% url 'landingpage' %}" class="galleryPageHomeBtn">HOME</a>
-</button>
+<div class="galleryPageAllBtns">
+  <button type="button" class="galleryPageBrowseBtn">
+    <a href="{% url 'landingpage' %}">BROWSE</a>
+  </button>
+  <button type="button" class="galleryPageAddArtifactBtn">
+    <a href="{% url 'addartifact' %}">ADD ARTIFACT</a>
+  </button>
+  <br />
+  <br />
+  <button type="button" class="galleryPageHomeBtn">
+    <a href="{% url 'landingpage' %}" class="galleryPageHomeBtn">HOME</a>
+  </button>
+</div>
 <br />
 <br />
 
@@ -15,7 +20,7 @@
   <div class="row">
     {% for results in Artifact %}
     <div class="col-4">
-      <h3 style="color: rgb(87, 3, 3)">{{ results.imgtitle }}</h3>
+      <h3>{{ results.imgtitle }}</h3>
       <img
         src="{{results.image.url}}"
         width="375"

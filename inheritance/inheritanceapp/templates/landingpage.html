@@ -32,21 +32,20 @@
       value="SUBMIT"
     />
   </form>
-  <p class="landingPgArtifactDescr">
-    Praesent sollicitudin sem vel arcu vulputate imperdiet. Praesent porta sem
-    ac neque ultrices tempor. Nullam augue tellus, facilisis vel sapien sodales,
-    gravida mollis magna.
-  </p>
+
+  <div id="landingPageUIDDescDiv">
+    <h1 id="landingPgArtifactUID">uid</h1>
+    <p class="landingPgArtifactDescr">
+      Praesent sollicitudin sem vel arcu vulputate imperdiet. Praesent porta sem
+      ac neque ultrices tempor. Nullam augue tellus, facilisis vel sapien
+      sodales, gravida mollis magna.
+    </p>
+  </div>
 </div>
 
 <div id="landingPageImgOnlyDiv">
   <!-- single row/col to contain dynamic randomized image on landing page pulled from images uploaded to gallery -->
-  <img
-    src="{{background.image.url}}"
-    alt="Dummy Image"
-    width="100%"
-    id="dummyImgOnLandingPage"
-  />
+  <img src="{{background.image.url}}" alt="Dummy Image" id="ImgOnLandingPage" />
 </div>
 
 {% endblock content %}

@@ -5,6 +5,8 @@ body {
   background-image: url("/static/cleanse.jpg") no-repeat;
   background-size: cover;
   z-index: -1;
+
+  margin-top: -5rem;
 }
 #landingPageAllContentButImgDiv {
   position: relative;
@@ -13,10 +15,27 @@ body {
 #landingPageImgOnlyDiv {
   position: absolute;
   z-index: -1;
-  margin-top: -20rem;
+  margin-top: -30rem;
 }
-#dummyImgOnLandingPage {
-  height: 100%;
+#ImgOnLandingPage {
+  width: 100%;
+}
+#landingPgArtifactUID {
+  color: wheat;
+  font-size: medium;
+  text-transform: lowercase;
+  text-shadow: 0.031rem 0.031rem black;
+
+  position: absolute;
+  right: 20rem;
+  bottom: -9.5rem;
+}
+#landingPgArtifactUID:hover {
+  color: black;
+  cursor: pointer;
+  transform: scale(1.5);
+  transition: all 1.75s;
+  text-shadow: 0.031rem 0.031rem whitesmoke;
 }
 .landingPgArtifactDescr {
   width: 25%;
@@ -30,13 +49,7 @@ body {
   right: 2.313rem;
   bottom: -15.313rem;
 }
-#titleLogoDiv,
-h1#inheritanceTitle,
-img#inheritanceTitle {
-  display: inline;
-}
 button,
-#inheritanceTitle,
 #symbolicRelease,
 p#ourStoryIntroSentence,
 .ourStorySubHeads,
@@ -49,22 +62,12 @@ p#conceptParagraph {
 .ourStoryParagraphs {
   text-align: justify;
 }
-#emptyDivOnTopOfTitleLogo {
-  margin-bottom: 2.75rem;
-}
-#inheritanceTitle {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-size: xx-large;
-  margin-bottom: 1.375rem;
-  /* text-shadow: .048rem .048rem wheat; */
-}
 img#inheritanceLogo {
-  width: 3.563rem;
-  margin-left: -2.313rem;
-  margin-top: 0.688rem;
-  margin-bottom: 1.375rem;
-  /* filter: drop-shadow(.063rem .063rem wheat) */
+  width: 31.5rem;
+  margin-top: 6rem;
+  margin-left: 1.5rem;
+  margin-bottom: 2.375rem;
+  filter: drop-shadow(0.063rem 0.063rem whitesmoke);
 }
 
 /* NOT USING IN LIEU OF LOGO */
@@ -89,16 +92,19 @@ button > a {
 button:hover > a {
   color: tomato;
 }
+.galleryPageBrowseBtn,
 .galleryPageHomeBtn {
-  margin-bottom: 1.375rem;
+  display: block;
+}
+.galleryPageAddArtifactBtn {
+  margin-top: 2.5rem;
 }
 .editPgHomeBtn {
-  margin-bottom: -2.75rem;
-  margin-top: -31.25rem;
+  margin-bottom: -1.65rem;
 }
-.editPgGalleryBtn {
+/* .editPgGalleryBtn {
   margin-bottom: 2.938rem;
-}
+} */
 button#editArtifactUploadBtn {
   margin-right: -2.5rem;
 }
@@ -168,10 +174,8 @@ input[type="text"]#symbolicRelease {
 }
 #imgOnLandingPage {
   width: 100%;
-  /* margin-top: 1.5rem; */
   margin-top: 0;
   margin-right: 2.75rem;
-  /* margin-bottom: .688rem; */
 }
 p#ourStoryIntroSentence {
   text-align: center;
@@ -293,9 +297,19 @@ center,
   margin-left: auto;
   margin-right: auto;
 }
+#preloadedImg {
+  width: 100%;
+
+  position: absolute;
+  left: 0;
+
+  margin-top: -30rem;
+  z-index: -7;
+}
 h3.uploadSuccessText {
+  color: limegreen;
   text-align: center;
-  font-size: small;
+  font-size: large;
 }
 .uploadSuccessText,
 #preloadImgEditBtn,
@@ -317,77 +331,108 @@ center form {
   margin-top: 0.05rem;
 }
 #editPageImageRender {
-  width: 75%;
-  margin-top: -25rem;
+  margin-top: -50rem;
+
+  position: absolute;
+  left: 0;
+  z-index: -44;
+  width: 100%;
+}
+#addArtifactDisclaimerInfo {
+  color: red;
+  font-size: x-small;
+  text-align: justify;
+  width: 100%;
+}
+#addArtifactDisclaimerInfo:hover {
+  color: limegreen;
+  font-size: small;
+  padding: 1.3rem;
+  border: 0.0313rem solid white;
+  background-color: whitesmoke;
+  transform: scale(1.45);
+  transition: all 3s;
+  width: 100%;
 }
 label.filterLabels {
-  font-size: small;
+  text-shadow: 0.025rem 0.025rem deepskyblue;
+  font-size: xx-small;
   text-transform: lowercase;
-  font-variant: small-caps;
+  margin-left: 1.45rem;
+  margin-top: 0.2rem;
 
-  display: flex;
+  /* CODE BELOW FOR WHAT IS NOW PLACEHOLDER FOR FILTERS */
+  /* font-variant: small-caps; */
+  /* display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center; */
 }
-
 /* CODE BELOW CHANGES COLOR OF BACKGROUND NOT CIRCULAR SLIDER ELEMENT */
 input[type="range"] {
   -webkit-appearance: none;
-  background-color: rgb(87, 3, 3);
+  background-color: transparent;
+  border: 0.025rem solid tomato;
   border-radius: 0.5rem;
   outline: none;
 }
 input[type="range"]::-webkit-slider-thumb {
-  /* CODE LINE BEFORE REQUIRED TO NOT DISPLAY SLIDERS BEFORE SUBSEQUENT THEN ADDS SLIDERS BACK IN; NOTE MAY NOT WORK IN MOZILLA DESPITE ADD ABOVE */
+  /* CODE LINE BEFORE (APPEARANCE) REQUIRED TO NOT DISPLAY SLIDERS BEFORE SUBSEQUENT THEN ADDS SLIDERS BACK IN; NOTE MAY NOT WORK IN MOZILLA DESPITE ADD ABOVE */
   -webkit-appearance: none;
-  border: 0.2rem solid tomato;
+  /* border: 0.2rem solid darksalmon; */
   border-radius: 50%;
   height: 1rem;
   width: 1rem;
-  background-color: tomato;
+  background-color: limegreen;
+  text-shadow: 0.025rem 0.025rem limegreen;
+}
+/* FOLLOWING 2 CODE BLOCKS POSITION FILTER LABELS AS PLACEHOLDER TEXT */
+div.filtersDiv {
+  position: relative;
+  z-index: 1;
+}
+div.filtersDiv > label {
+  position: absolute;
+  z-index: -1;
 }
 .createdAtClass {
   display: none;
 }
 .allFiltersCategoriesRow {
-  margin-top: 4%;
-  margin-left: 15%;
-}
-.editPgFilterBtnsDiv {
-  margin-top: -1.5rem;
-  margin-bottom: 2rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  margin-top: -7rem;
 }
 .filtersDiv {
   text-align: center;
-}
-.form-check {
-  margin-left: -10rem;
+  margin-left: 7rem;
 }
 input.form-check-input#flexCheckDefault {
   border-radius: 50%;
   padding: 0.55rem;
-  border: black;
-  background-color: tomato;
-  margin-left: 10rem;
+  border: limegreen;
+  background-color: limegreen;
+  box-shadow: none;
 }
 input.form-check-input#flexCheckDefault:hover {
   transform: scale(1.5);
 }
 input.form-check-input#flexCheckDefault:focus {
-  background-color: rgb(87, 3, 3);
+  background-color: red;
 }
 .categoriesDiv {
-  margin-top: 3rem;
-  margin-left: -13rem;
+  margin-left: 20rem;
 }
 label.form-check-label {
   margin-left: 0.5rem;
   margin-bottom: 0.5rem;
   font-variant: small-caps;
   font-size: small;
+  text-shadow: 0.025rem 0.025rem deepskyblue;
 }
 
-/* UNSURE IF WILL READD ADD ARTIFACT BTN */
+/* UNSURE IF WILL RE-ADD ADD ARTIFACT BTN */
 /* #addArtifactFormSubmitBtn {
     display: block;
     font-weight: bold;

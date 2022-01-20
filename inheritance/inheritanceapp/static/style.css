@@ -5,13 +5,20 @@ body {
   background-image: url("/static/cleanse.jpg") no-repeat;
   background-size: cover;
   z-index: -1;
-
   margin-top: -5rem;
 }
+
+/* comment back in if/when use uid code below and in landing page */
+/* a {
+  text-decoration: none;
+} */
+
 #landingPageAllContentButImgDiv {
   position: relative;
   z-index: 3;
 }
+
+/* POSSIBLE TO SCALE-CODE MARGIN TOP */
 #landingPageImgOnlyDiv {
   position: absolute;
   z-index: -1;
@@ -20,34 +27,28 @@ body {
 #ImgOnLandingPage {
   width: 100%;
 }
-#landingPgArtifactUID {
+.artifactInfoLandingPg {
+  position: absolute;
+  left: 50rem;
+  bottom: -7.5rem;
+}
+/* .landingPgArtifactUID {
   color: wheat;
-  font-size: medium;
+  font-size: xx-large;
   text-transform: lowercase;
   text-shadow: 0.031rem 0.031rem black;
-
-  position: absolute;
-  right: 20rem;
-  bottom: -9.5rem;
+  margin-right: 0.5rem;
 }
-#landingPgArtifactUID:hover {
-  color: black;
-  cursor: pointer;
-  transform: scale(1.5);
-  transition: all 1.75s;
-  text-shadow: 0.031rem 0.031rem whitesmoke;
-}
+.landingPgArtifactUID:hover {
+  color: darkblue;
+  text-shadow: 0.031rem 0.031rem turquoise;
+} */
 .landingPgArtifactDescr {
   width: 25%;
-  color: wheat;
-  font-size: smaller;
+  color: black;
+  font-size: large;
   text-transform: lowercase;
-  text-shadow: 0.031rem 0.031rem black;
-  text-align: justify;
-
-  position: absolute;
-  right: 2.313rem;
-  bottom: -15.313rem;
+  text-shadow: 0.031rem 0.031rem whitesmoke;
 }
 button,
 #symbolicRelease,
@@ -297,6 +298,8 @@ center,
   margin-left: auto;
   margin-right: auto;
 }
+
+/* POSSIBLE TO SCALE-CODE MARGIN TOP */
 #preloadedImg {
   width: 100%;
 
@@ -330,6 +333,8 @@ center form {
 .editPgFilterBtnsDiv {
   margin-top: 0.05rem;
 }
+
+/* POSSIBLE TO SCALE-CODE MARGIN TOP */
 #editPageImageRender {
   margin-top: -50rem;
 
@@ -447,17 +452,36 @@ label.form-check-label {
     border-color: tomato;
 } */
 
-/* MEDIA QUERIES FOR HIGH DEF MOCK LANDING PAGE CONTENT */
-@media only screen and (max-width: 498px) {
-  .landingPgArtifactDescr {
-    min-width: 80%;
-    bottom: -11.5rem;
+/* MEDIA QUERIES FOR LANDING PAGE CONTENT */
+@media only screen and (min-width: 486.1px) {
+  #bigViewDiv {
+    display: visible;
+  }
+  #tinyViewDiv {
+    display: none;
   }
 }
-/* CURRENTLY SET TO HIDE ALL BODY CONTENT AT THIS SCREEN SIZE IDEALLY WOULD INSTEAD DISPLAY TEXT PROMPT TO VISIT SITE ON A LARGER SCREEN/DEVICE */
+/* CURRENTLY SET TO HIDE ALL BODY CONTENT AT THIS SCREEN SIZE AND PROMPTS TO VISIT SITE ON A LARGER SCREEN/DEVICE */
 @media only screen and (max-width: 486px) {
-  body {
-    visibility: hidden;
+  #bigViewDiv {
+    display: none;
+  }
+  #tinyViewDiv {
+    display: visible;
+  }
+  img#inheritanceLogo {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: xx-large;
+  }
+  p {
+    font-size: medium;
+    text-align: center;
   }
 }
 

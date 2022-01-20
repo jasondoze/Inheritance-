@@ -5,13 +5,20 @@ body {
   background-image: url("/static/cleanse.jpg") no-repeat;
   background-size: cover;
   z-index: -1;
-
   margin-top: -5rem;
 }
+
+/* comment back in if/when use uid code below and in landing page */
+/* a {
+  text-decoration: none;
+} */
+
 #landingPageAllContentButImgDiv {
   position: relative;
   z-index: 3;
 }
+
+/* POSSIBLE TO SCALE-CODE MARGIN TOP */
 #landingPageImgOnlyDiv {
   position: absolute;
   z-index: -1;
@@ -25,7 +32,7 @@ body {
   left: 50rem;
   bottom: -7.5rem;
 }
-.landingPgArtifactUID {
+/* .landingPgArtifactUID {
   color: wheat;
   font-size: xx-large;
   text-transform: lowercase;
@@ -34,15 +41,14 @@ body {
 }
 .landingPgArtifactUID:hover {
   color: darkblue;
-  cursor: pointer;
   text-shadow: 0.031rem 0.031rem turquoise;
-}
+} */
 .landingPgArtifactDescr {
   width: 25%;
-  color: wheat;
-  font-size: smaller;
+  color: black;
+  font-size: large;
   text-transform: lowercase;
-  text-shadow: 0.031rem 0.031rem black;
+  text-shadow: 0.031rem 0.031rem whitesmoke;
 }
 button,
 #symbolicRelease,
@@ -292,6 +298,8 @@ center,
   margin-left: auto;
   margin-right: auto;
 }
+
+/* POSSIBLE TO SCALE-CODE MARGIN TOP */
 #preloadedImg {
   width: 100%;
 
@@ -325,6 +333,8 @@ center form {
 .editPgFilterBtnsDiv {
   margin-top: 0.05rem;
 }
+
+/* POSSIBLE TO SCALE-CODE MARGIN TOP */
 #editPageImageRender {
   margin-top: -50rem;
 

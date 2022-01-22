@@ -6,6 +6,7 @@ from django.shortcuts import render
 from .models import *
 from .forms import EditorForm, ImageForm, EditImageForm
 import random
+from django.http import HttpResponseBadRequest
 
 
 # This function takes in a request and returns the template landingpage.html with an object of all artifacts ordered by their artifact_id. The code is using the objects method to get all artifacts from the database, then it orders them by their artifact_id which will be used later on when rendering the page. The code returns a landingpage.html template that contains the list of all artifacts. 
@@ -33,6 +34,7 @@ def editartifact(request, id):
                 'imgdesc': form.cleaned_data['imgdesc'], 
                 'imgtitle': form.cleaned_data['imgtitle'],
                 'imgfilter': form.cleaned_data['imgfilter'],
+                'category': form.cleaned_data['category']
             } 
             Artifact.objects.filter(artifact_id=id).update(**update_data)
             return HttpResponseRedirect(reverse('gallery'))

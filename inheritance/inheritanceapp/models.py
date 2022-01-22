@@ -21,6 +21,12 @@ class Artifact(models.Model):
     image=models.ImageField(upload_to='images/')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    category = models.CharField(max_length=25, default="", choices=[
+        ('',''),
+        ('artistic', 'artistic'),
+        ('beautiful', 'beautiful'),
+        ("profound", "profound")
+    ])
 
     # Meta class orders the photos by the date they were created, with the newest photo first
     class Meta:

@@ -40,10 +40,53 @@
     </p>
     <form method="post" enctype="multipart/form-data" id="editArtifactFormDiv">
       {% csrf_token %} {{ form }}
+      <!-- COMMENTED OUT INITIAL CATEGORY CODE IN LIEU OF BUILT-IN FUNCTIONALITY -->
+      <!-- <div class="col-md filterCategoryDivs categoriesDiv">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            value="artistic"
+            id="flexCheckDefault"
+            name="category"
+            required
+          />
+          <label class="form-check-label" for="flexCheckDefault"
+            >artistic</label
+          >
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            value="beautiful"
+            id="flexCheckDefault"
+            name="category"
+            required
+          />
+          <label class="form-check-label" for="flexCheckDefault"
+            >beautiful</label
+          >
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            value="profound"
+            id="flexCheckDefault"
+            name="category"
+            required
+          />
+          <label class="form-check-label" for="flexCheckDefault"
+            >profound</label
+          >
+        </div>
+      </div> -->
       <button type="submit" id="editArtifactUploadBtn">Save To Gallery</button>
       <button type="submit" id="editArtifactDeleteBtn">Delete & Reset</button>
     </form>
   </center>
+
   <div class="container editPgFilterBtnsDiv">
     <div class="row allFiltersCategoriesRow">
       <div class="col-md filterCategoryDivs filtersDiv">
@@ -143,75 +186,6 @@
           data-scale="%"
           class="filterSliders"
         /><br />
-      </div>
-
-      <div class="col-md filterCategoryDivs categoriesDiv">
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckDefault"
-          />
-          <label class="form-check-label" for="flexCheckDefault"
-            >category</label
-          >
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckDefault"
-          />
-          <label class="form-check-label" for="flexCheckDefault"
-            >category</label
-          >
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckDefault"
-          />
-          <label class="form-check-label" for="flexCheckDefault"
-            >category</label
-          >
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckDefault"
-          />
-          <label class="form-check-label" for="flexCheckDefault"
-            >category</label
-          >
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckDefault"
-          />
-          <label class="form-check-label" for="flexCheckDefault"
-            >category</label
-          >
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckDefault"
-          />
-          <label class="form-check-label" for="flexCheckDefault"
-            >category</label
-          >
-        </div>
       </div>
     </div>
   </div>

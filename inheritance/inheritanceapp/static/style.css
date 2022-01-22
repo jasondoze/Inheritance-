@@ -17,7 +17,6 @@ body {
   position: relative;
   z-index: 3;
 }
-/* POSSIBLE TO SCALE-CODE MARGIN TOP */
 #landingPageImgOnlyDiv {
   position: absolute;
   z-index: -1;
@@ -70,15 +69,6 @@ img#inheritanceLogo {
   margin-bottom: 2.375rem;
   filter: drop-shadow(0.063rem 0.063rem whitesmoke);
 }
-
-/* NOT USING IN LIEU OF LOGO */
-/* #inheritanceTagline {
-    margin-top: -.688rem;
-    font-family: cursive;
-    font-style: italic;
-    font-size: medium;
-} */
-
 button {
   width: 9rem;
   border-radius: 4.188rem;
@@ -124,12 +114,6 @@ button.btn.btn-primary:hover {
   transform: scale(1.15);
   background-color: darksalmon;
 }
-
-/* WHEN ACTIVE CODE BELOW OVERRIDES ALL TO NOT DISPLAY ANY LABELS */
-/* label {
-    display: none;
-} */
-
 /* CODE BELOW USES SPECIFICITY TO TARGET EXACT LABEL TO DISPLAY WHILE LABEL=FALSE APPLIED TO ATTRIBUTES IN FORMS FILE ALLOWS OTHER LABELS TO NOT DISPLAY */
 form#editArtifactFormDiv label {
   display: none;
@@ -212,17 +196,7 @@ button:hover,
 #preloadImgEditBtn > a:hover {
   color: tomato;
 }
-
-/* DECIDED NOT TO INCLUDE LABELS IN LIEU OF PLACEHOLDER TEXT */
-/* label {
-    font-variant: small-caps;
-    text-transform: lowercase;
-    font-weight: bold;
-} */
-
-/* BELOW CODE IRRELEVANT PER REPLACEMENT OF MANUAL CATEGORY CODING WITH BUILT-IN CODING OF CATEGORIES */
-input#id_imgfilter
-/* input#id_category  */ {
+input#id_imgfilter {
   display: none;
 }
 input#id_imgtitle,
@@ -268,6 +242,7 @@ select#id_category {
   width: 9rem;
   margin-right: -2.5rem;
   padding: 0.25rem 0.125rem;
+  outline: none;
 
   text-align: center;
   font-size: small;
@@ -275,14 +250,6 @@ select#id_category {
   background-color: white;
   border: 0.125rem solid tomato;
 }
-
-/* PLACEHOLDERS WORKING AGAIN PER CURRENT CODE */
-/* input#id_imgtitle::placeholder, input#id_imgdesc::placeholder, input#id_image::placeholder {
-    font-size: smaller;
-    text-align: center;
-    padding-top: .438rem;
-} */
-
 input#id_imgtitle:focus,
 input#id_imgdesc:focus,
 input#id_image:focus,
@@ -307,7 +274,6 @@ center,
   margin-left: auto;
   margin-right: auto;
 }
-/* POSSIBLE TO SCALE-CODE MARGIN TOP */
 #preloadedImg {
   width: 100%;
 
@@ -340,8 +306,8 @@ center form {
 }
 .editPgFilterBtnsDiv {
   margin-top: -18rem;
+  margin-left: 2.5rem;
 }
-/* POSSIBLE TO SCALE-CODE MARGIN TOP */
 #editPageImageRender {
   margin-top: -35.15rem;
 
@@ -355,6 +321,7 @@ center form {
   font-size: x-small;
   text-align: justify;
   width: 100%;
+  margin-top: 1.5rem;
 }
 #addArtifactDisclaimerInfo:hover {
   color: limegreen;
@@ -372,12 +339,6 @@ label.filterLabels {
   text-transform: lowercase;
   margin-left: 1.45rem;
   margin-top: 0.2rem;
-
-  /* CODE BELOW FOR WHAT IS NOW PLACEHOLDER FOR FILTERS */
-  /* font-variant: small-caps; */
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: center; */
 }
 /* CODE BELOW CHANGES COLOR OF BACKGROUND NOT CIRCULAR SLIDER ELEMENT */
 input[type="range"] {
@@ -390,7 +351,6 @@ input[type="range"] {
 input[type="range"]::-webkit-slider-thumb {
   /* CODE LINE BEFORE (APPEARANCE) REQUIRED TO NOT DISPLAY SLIDERS BEFORE SUBSEQUENT THEN ADDS SLIDERS BACK IN; NOTE MAY NOT WORK IN MOZILLA DESPITE ADD ABOVE */
   -webkit-appearance: none;
-  /* border: 0.2rem solid darksalmon; */
   border-radius: 50%;
   height: 1rem;
   width: 1rem;
@@ -401,6 +361,7 @@ input[type="range"]::-webkit-slider-thumb {
 div.filtersDiv {
   position: relative;
   z-index: 1;
+  display: inline;
 }
 div.filtersDiv > label {
   position: absolute;
@@ -409,27 +370,6 @@ div.filtersDiv > label {
 .createdAtClass {
   display: none;
 }
-
-/* BELOW CODE IRRELEVANT PER REPLACEMENT OF MANUAL CATEGORY CODING WITH BUILT-IN CODING OF CATEGORIES */
-/* .allFiltersCategoriesRow {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-
-  margin-top: -7rem;
-} */
-/* .filtersDiv {
-  text-align: center;
-  margin-left: 7rem;
-} */
-/* input.form-check-input#flexCheckDefault {
-  border-radius: 50%;
-  padding: 0.55rem;
-  border: limegreen;
-  background-color: limegreen;
-  box-shadow: none;
-} */
-
 input.form-check-input#flexCheckDefault:hover {
   transform: scale(1.5);
 }
@@ -446,21 +386,6 @@ label.form-check-label {
   font-size: small;
   text-shadow: 0.025rem 0.025rem deepskyblue;
 }
-
-/* UNSURE IF WILL RE-ADD ADD ARTIFACT BTN */
-/* #addArtifactFormSubmitBtn {
-    display: block;
-    font-weight: bold;
-
-    border-radius: 6.688rem;
-    padding: 1.063rem;
-    width: 10.438rem;
-    margin-top: 1.438rem;
-}
-#addArtifactFormSubmitBtn:hover {
-    color: tomato;
-    border-color: tomato;
-} */
 
 /* MEDIA QUERIES FOR LANDING PAGE CONTENT */
 @media only screen and (min-width: 486.1px) {

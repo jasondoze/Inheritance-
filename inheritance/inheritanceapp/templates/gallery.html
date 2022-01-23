@@ -8,35 +8,37 @@
   </button>
   <br />
   <br />
-  <button type="button" class="galleryPageHomeBtn">
+  <!-- COMMENTED OUT PER INDUSTRY STANDARD TO BAKE HOME LINK INTO NAV/BRAND (NOT INTO AN ACTUAL BUTTON) -->
+  <!-- <button type="button" class="galleryPageHomeBtn">
     <a href="{% url 'landingpage' %}" class="galleryPageHomeBtn">HOME</a>
   </button>
-</div>
-<br />
-<br />
+</div> -->
+  <br />
+  <br />
 
-<!-- Rows and columns for the gallery page that display uploaded images into a 3 column gallery -->
-<div class="container">
-  <div class="row">
-    {% for results in Artifact %}
-    <div class="col-4">
-      <h3>{{ results.imgtitle }}</h3>
-      <img
-        src="{{results.image.url}}"
-        width="375"
-        alt="{{results.imgtitle}}"
-        class="img-thumbnail"
-        style="filter:{{results.imgfilter}}"
-      />
-      <br />
-      <b>{{ results.imgdesc }}</b>
-      <br />
-      <b class="createdAtClass"
-        >created {{ results.created_at|date:"Y-m-d H:m" }}</b
-      >
-      <hr />
+  <!-- Rows and columns for the gallery page that display uploaded images into a 3 column gallery -->
+  <div class="container">
+    <div class="row">
+      {% for results in Artifact %}
+      <div class="col-4">
+        <h3>{{ results.imgtitle }}</h3>
+        <img
+          src="{{results.image.url}}"
+          width="375"
+          alt="{{results.imgtitle}}"
+          class="img-thumbnail"
+          style="filter:{{results.imgfilter}}"
+        />
+        <br />
+        <b>{{ results.imgdesc }}</b>
+        <br />
+        <b class="createdAtClass"
+          >created {{ results.created_at|date:"Y-m-d H:m" }}</b
+        >
+        <hr />
+      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
+    {% endblock content %}
   </div>
-  {% endblock content %}
 </div>

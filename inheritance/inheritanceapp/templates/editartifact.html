@@ -1,11 +1,11 @@
 {% extends 'main.html' %} {% block content %}
-<br />
-<br />
-<button type="button" class="editPgHomeBtn galleryPageHomeBtn">
+
+<!-- COMMENTED OUT PER INDUSTRY STANDARD TO BAKE HOME LINK INTO NAV/BRAND (NOT INTO AN ACTUAL BUTTON) -->
+<!-- <button type="button" class="editPgHomeBtn galleryPageHomeBtn">
   <a href="{% url 'landingpage' %}" class="galleryPageHomeBtn">HOME</a>
 </button>
 <br />
-<br />
+<br /> -->
 <button type="button" title="Our Story Button">
   <a href="{% url 'ourstory' %}">OUR STORY</a>
 </button>
@@ -27,192 +27,122 @@
 <div id="addArtifactFormWrappingDiv">
   <center>
     <img src="{{ artifact.image.url}}" alt="connect" id="editPageImageRender" />
-    <p id="addArtifactDisclaimerInfo">
-      disclaimer/disclosure notice to users 1) outlining that they have a chance
-      to not add to the inheritance community by clicking DELETE INSTEAD OF SAVE
-      BEFORE ADDING ARTIFACT (on click, this clears all entered content and
-      resets the form to empty fields ready for the addition of an artifact), 2)
-      informing users that once artifacts are added to inheritance those
-      artifacts cannot be deleted, 3) stating acceptable & appropriate versus
-      unacceptable & inappropriate content for the inheritance community, 4)
-      users have edit options during drafts before their final publish, 5) and
-      additional such content as necessary
-    </p>
     <form method="post" enctype="multipart/form-data" id="editArtifactFormDiv">
       {% csrf_token %} {{ form }}
       <button type="submit" id="editArtifactUploadBtn">Save To Gallery</button>
       <button type="submit" id="editArtifactDeleteBtn">Delete & Reset</button>
+      <p id="addArtifactDisclaimerInfo">
+        disclaimer/disclosure notice to users 1) outlining that they have a
+        chance to not add to the inheritance community by clicking DELETE
+        INSTEAD OF SAVE BEFORE ADDING ARTIFACT (on click, this clears all
+        entered content and resets the form to empty fields ready for the
+        addition of an artifact), 2) informing users that once artifacts are
+        added to inheritance those artifacts cannot be deleted, 3) stating
+        acceptable & appropriate versus unacceptable & inappropriate content for
+        the inheritance community, 4) users have edit options during drafts
+        before their final publish, 5) and additional such content as necessary
+      </p>
     </form>
   </center>
-  <div class="container editPgFilterBtnsDiv">
-    <div class="row allFiltersCategoriesRow">
-      <div class="col-md filterCategoryDivs filtersDiv">
-        <label class="filterLabels">Blur</label>
-        <input
-          type="range"
-          min="0"
-          max="20"
-          value="0"
-          step="1"
-          onchange="applyFilter()"
-          data-filter="blur"
-          data-scale="px"
-          class="filterSliders"
-        /><br />
-        <label class="filterLabels">Brightness</label>
-        <input
-          type="range"
-          min="50"
-          max="100"
-          value="0"
-          step="1"
-          onchange="applyFilter()"
-          data-filter="brightness"
-          data-scale="%"
-          class="filterSliders"
-        /><br />
-        <label class="filterLabels">Contrast</label>
-        <input
-          type="range"
-          min="50"
-          max="100"
-          value="0"
-          step="1"
-          onchange="applyFilter()"
-          data-filter="contrast"
-          data-scale="%"
-          class="filterSliders"
-        /><br />
-        <label class="filterLabels">Grayscale</label>
-        <input
-          type="range"
-          min="0"
-          max="100"
-          value="0"
-          step="1"
-          onchange="applyFilter()"
-          data-filter="grayscale"
-          data-scale="%"
-          class="filterSliders"
-        /><br />
-        <label class="filterLabels">Invert</label>
-        <input
-          type="range"
-          min="0"
-          max="100"
-          value="0"
-          step="1"
-          onchange="applyFilter()"
-          data-filter="invert"
-          data-scale="%"
-          class="filterSliders"
-        /><br />
-        <label class="filterLabels">Opacity</label>
-        <input
-          type="range"
-          min="75"
-          max="100"
-          value="0"
-          step="1"
-          onchange="applyFilter()"
-          data-filter="opacity"
-          data-scale="%"
-          class="filterSliders"
-        /><br />
-        <label class="filterLabels">Saturate</label>
-        <input
-          type="range"
-          min="1"
-          max="15"
-          value="1"
-          step="1"
-          onchange="applyFilter()"
-          data-filter="saturate"
-          data-scale=""
-          class="filterSliders"
-        /><br />
-        <label class="filterLabels">Sepia</label>
-        <input
-          type="range"
-          min="0"
-          max="100"
-          value="0"
-          step="1"
-          onchange="applyFilter()"
-          data-filter="sepia"
-          data-scale="%"
-          class="filterSliders"
-        /><br />
-      </div>
 
-      <div class="col-md filterCategoryDivs categoriesDiv">
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckDefault"
-          />
-          <label class="form-check-label" for="flexCheckDefault"
-            >category</label
-          >
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckDefault"
-          />
-          <label class="form-check-label" for="flexCheckDefault"
-            >category</label
-          >
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckDefault"
-          />
-          <label class="form-check-label" for="flexCheckDefault"
-            >category</label
-          >
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckDefault"
-          />
-          <label class="form-check-label" for="flexCheckDefault"
-            >category</label
-          >
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckDefault"
-          />
-          <label class="form-check-label" for="flexCheckDefault"
-            >category</label
-          >
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckDefault"
-          />
-          <label class="form-check-label" for="flexCheckDefault"
-            >category</label
-          >
-        </div>
-      </div>
+  <div class="editPgFilterBtnsDiv">
+    <div class="filtersDiv">
+      <label class="filterLabels">Blur</label>
+      <input
+        type="range"
+        min="0"
+        max="20"
+        value="0"
+        step="1"
+        onchange="applyFilter()"
+        data-filter="blur"
+        data-scale="px"
+        class="filterSliders"
+      /><br />
+      <label class="filterLabels">Brightness</label>
+      <input
+        type="range"
+        min="50"
+        max="100"
+        value="0"
+        step="1"
+        onchange="applyFilter()"
+        data-filter="brightness"
+        data-scale="%"
+        class="filterSliders"
+      /><br />
+      <label class="filterLabels">Contrast</label>
+      <input
+        type="range"
+        min="50"
+        max="100"
+        value="0"
+        step="1"
+        onchange="applyFilter()"
+        data-filter="contrast"
+        data-scale="%"
+        class="filterSliders"
+      /><br />
+      <label class="filterLabels">Grayscale</label>
+      <input
+        type="range"
+        min="0"
+        max="100"
+        value="0"
+        step="1"
+        onchange="applyFilter()"
+        data-filter="grayscale"
+        data-scale="%"
+        class="filterSliders"
+      /><br />
+      <label class="filterLabels">Invert</label>
+      <input
+        type="range"
+        min="0"
+        max="100"
+        value="0"
+        step="1"
+        onchange="applyFilter()"
+        data-filter="invert"
+        data-scale="%"
+        class="filterSliders"
+      /><br />
+      <label class="filterLabels">Opacity</label>
+      <input
+        type="range"
+        min="75"
+        max="100"
+        value="0"
+        step="1"
+        onchange="applyFilter()"
+        data-filter="opacity"
+        data-scale="%"
+        class="filterSliders"
+      /><br />
+      <label class="filterLabels">Saturate</label>
+      <input
+        type="range"
+        min="1"
+        max="15"
+        value="1"
+        step="1"
+        onchange="applyFilter()"
+        data-filter="saturate"
+        data-scale=""
+        class="filterSliders"
+      /><br />
+      <label class="filterLabels">Sepia</label>
+      <input
+        type="range"
+        min="0"
+        max="100"
+        value="0"
+        step="1"
+        onchange="applyFilter()"
+        data-filter="sepia"
+        data-scale="%"
+        class="filterSliders"
+      /><br />
     </div>
   </div>
 </div>

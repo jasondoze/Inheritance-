@@ -14,7 +14,7 @@ class ImageForm(forms.ModelForm):
     image = forms.FileField(label=False, widget=forms.ClearableFileInput(attrs={"class": "control-choosefile-btn"})) 
     class Meta:
         model = Artifact
-        fields = ('artifact_id', 'imgtitle', 'imgdesc', 'image')
+        fields = ('artifact_id', 'imgtitle', 'imgdesc', 'image', 'category')
 
 # This code is a form for adding an image to the website. The user will enter their title and description, then upload an image from their computer. The code is a form with two fields, one for the title of the image and one for the description.    
 class EditorForm(forms.Form):

@@ -1,8 +1,40 @@
 {% extends 'main.html' %} {% load static %} {% block content %}
 <div class="galleryPageAllBtns">
-  <button type="button" class="galleryPageBrowseBtn">
-    <a href="{% url 'landingpage' %}">BROWSE</a>
-  </button>
+  <!-- Browse wired to dynamically populate images by category -->
+  <div class="dropdown">
+    <button
+      class="btn btn-secondary dropdown-toggle galleryPageBrowseBtn"
+      type="button"
+      id="dropdownMenuButton1"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      BROWSE
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li>
+        <a
+          class="dropdown-item"
+          href="{% url 'gallery-category' category='artistic' %}"
+          >artistic</a
+        >
+      </li>
+      <li>
+        <a
+          class="dropdown-item"
+          href="{% url 'gallery-category' category='beautiful' %}"
+          >beautiful</a
+        >
+      </li>
+      <li>
+        <a
+          class="dropdown-item"
+          href="{% url 'gallery-category' category='profound' %}"
+          >profound</a
+        >
+      </li>
+    </ul>
+  </div>
   <button type="button" class="galleryPageAddArtifactBtn">
     <a href="{% url 'addartifact' %}">ADD ARTIFACT</a>
   </button>

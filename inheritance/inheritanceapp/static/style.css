@@ -83,6 +83,28 @@ button > a {
 button:hover > a {
   color: tomato;
 }
+.btn-secondary {
+  color: darksalmon;
+  border: 0.085rem solid black;
+  border-radius: 4.188rem;
+  background-color: white;
+  box-shadow: 0.016rem 0.016rem 0.016rem 0.016rem black;
+
+  padding-top: 0.11rem;
+  padding-bottom: 0.11rem;
+}
+.btn-secondary:hover {
+  color: tomato;
+  background-color: white;
+  border: 0.085rem solid tomato;
+}
+.dropdown {
+  border: 0;
+  outline: 0;
+}
+.dropdown-item {
+  font-size: small;
+}
 .galleryPageBrowseBtn,
 .galleryPageHomeBtn {
   display: block;

@@ -30,7 +30,7 @@
     <form method="post" enctype="multipart/form-data" id="editArtifactFormDiv">
       {% csrf_token %} {{ form }}
       <button type="submit" id="editArtifactUploadBtn">Save To Gallery</button>
-      <button type="submit" id="editArtifactDeleteBtn">Delete & Reset</button>
+      <button type="submit" id="editArtifactDeleteBtn">Delete</button>
       <p id="addArtifactDisclaimerInfo">
         disclaimer/disclosure notice to users 1) outlining that they have a
         chance to not add to the inheritance community by clicking DELETE
@@ -58,30 +58,33 @@
         data-filter="blur"
         data-scale="px"
         class="filterSliders"
+        data-default="0"
       /><br />
       <label class="filterLabels">Brightness</label>
       <input
         type="range"
-        min="50"
-        max="100"
-        value="0"
+        min="0"
+        max="200"
+        value="100"
         step="1"
         onchange="applyFilter()"
         data-filter="brightness"
         data-scale="%"
         class="filterSliders"
+        data-default="100"
       /><br />
       <label class="filterLabels">Contrast</label>
       <input
         type="range"
-        min="50"
-        max="100"
-        value="0"
+        min="0"
+        max="200"
+        value="100"
         step="1"
         onchange="applyFilter()"
         data-filter="contrast"
         data-scale="%"
         class="filterSliders"
+        data-default="100"
       /><br />
       <label class="filterLabels">Grayscale</label>
       <input
@@ -94,6 +97,7 @@
         data-filter="grayscale"
         data-scale="%"
         class="filterSliders"
+        data-default="0"
       /><br />
       <label class="filterLabels">Invert</label>
       <input
@@ -106,30 +110,34 @@
         data-filter="invert"
         data-scale="%"
         class="filterSliders"
+        data-default="0"
       /><br />
-      <label class="filterLabels">Opacity</label>
+      <!-- removed opacity filter so the image will default at 100% opacity to view the opaque image without toggling filter -->
+      <!-- <label class="filterLabels">Opacity</label>
       <input
         type="range"
-        min="75"
+        min="0"
         max="100"
-        value="0"
+        value="100"
         step="1"
         onchange="applyFilter()"
         data-filter="opacity"
         data-scale="%"
         class="filterSliders"
-      /><br />
+        data-default="100"
+      /><br /> -->
       <label class="filterLabels">Saturate</label>
       <input
         type="range"
-        min="1"
-        max="15"
-        value="1"
+        min="0"
+        max="200"
+        value="100"
         step="1"
         onchange="applyFilter()"
         data-filter="saturate"
-        data-scale=""
+        data-scale="%"
         class="filterSliders"
+        data-default="100"
       /><br />
       <label class="filterLabels">Sepia</label>
       <input
@@ -142,7 +150,10 @@
         data-filter="sepia"
         data-scale="%"
         class="filterSliders"
+        data-default="0"
       /><br />
+      <!-- added filter reset button to reset the filters to default positions -->
+      <button type="submit" onclick="resetFilters()" id="filterResetButton">Reset Filters</button>
     </div>
   </div>
 </div>
@@ -164,6 +175,15 @@
     console.log(computedFilters);
     image.style.filter = computedFilters;
     document.getElementById("id_imgfilter").value = computedFilters;
+  }
+  
+  // This function resets the filters to their default values.
+  // Added class 'filterSliders' to all filter sliders 
+  function resetFilters() {
+    filterControls.forEach(function (item, index) {
+      item.value = item.getAttribute("data-default");
+      });
+    applyFilter();
   }
 </script>
 

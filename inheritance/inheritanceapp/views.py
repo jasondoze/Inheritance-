@@ -9,6 +9,7 @@ import random
 from django.http import HttpResponseBadRequest
 
 
+
 # This function takes in a request and returns the template landingpage.html with an object of all artifacts ordered by their artifact_id. The code is using the objects method to get all artifacts from the database, then it orders them by their artifact_id which will be used later on when rendering the page. The code returns a landingpage.html template that contains the list of all artifacts. 
 def landingpage(request):
     artifact = Artifact.objects.all().order_by('artifact_id')
@@ -65,6 +66,22 @@ def image_upload_view(request):
     else:
         form = ImageForm()
         return render(request, 'addartifact.html', {'form': form})
+
+
+ # The code starts by getting the artifact_id from the request and then deleting the artifact from the database. Then it returns a HttpResponseRedirect to the addartifact page.
+def deleteartifact(request, id):
+    # fetch the object related to passed id
+    artifact = Artifact.objects.get(artifact_id=id)  
+    if request.method =="POST":
+        # delete object
+        artifact.delete()
+        
+        return HttpResponseRedirect(reverse('addartifact'))
+    else:
+        return render(request, 'deleteartifact.html', {'artifact': artifact})
+        
+   
+
 
 
    

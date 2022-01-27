@@ -25,9 +25,10 @@ class EditorForm(forms.Form):
     image = forms.URLField(required=True, label=False, widget=forms.TextInput(attrs={'placeholder': 'add image'}))
 
 # This code is a form for editing the photo in the website. The user will can re-enter their title and description, then filter their image using sliders located below the photo. The code is a form with three fields, one for the title of the image, one for the description, and one for the filtered image.  
-
 class EditImageForm(forms.ModelForm):
     """Form for the image model"""
     class Meta:
         model = Artifact
         fields = ('imgtitle', 'imgdesc', 'imgfilter', 'category')
+
+

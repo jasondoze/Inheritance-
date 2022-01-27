@@ -26,7 +26,7 @@
 <br />
 <div id="addArtifactFormWrappingDiv">
   <center>
-    <img src="{{ artifact.image.url}}" alt="connect" id="editPageImageRender" />
+    <img src="{{ artifact.image.url }}" alt="connect" id="editPageImageRender" />
     <form method="post" enctype="multipart/form-data" id="editArtifactFormDiv">
       {% csrf_token %} {{ form }}
       <button type="submit" id="editArtifactUploadBtn">Save To Gallery</button>
@@ -44,7 +44,7 @@
       </p>
     </form>
   </center>
-
+<!-- The image filters below create sliders to manipulate the image before saving to the image gallery -->
   <div class="editPgFilterBtnsDiv">
     <div class="filtersDiv">
       <label class="filterLabels">Blur</label>
@@ -112,20 +112,6 @@
         class="filterSliders"
         data-default="0"
       /><br />
-      <!-- removed opacity filter so the image will default at 100% opacity to view the opaque image without toggling filter -->
-      <!-- <label class="filterLabels">Opacity</label>
-      <input
-        type="range"
-        min="0"
-        max="100"
-        value="100"
-        step="1"
-        onchange="applyFilter()"
-        data-filter="opacity"
-        data-scale="%"
-        class="filterSliders"
-        data-default="100"
-      /><br /> -->
       <label class="filterLabels">Saturate</label>
       <input
         type="range"
@@ -157,6 +143,19 @@
     </div>
   </div>
 </div>
+<br />
+<br />
+<br />
+<div class="main">
+  <!-- Create a Form -->
+  <form method="POST">
+      <!-- Security token by Django -->
+      {% csrf_token %}
+      <!-- Delete button to start the delete process -->
+      <a href="/deleteartifact/{{artifact.artifact_id}}">Delete</a>
+      
+  </form>
+
 
 <script type="text/javascript">
   // This function applies the filter to the image by scanning the filter controls and applying the updated filter text string to the image.

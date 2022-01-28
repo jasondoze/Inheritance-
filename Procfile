@@ -1,1 +1,1 @@
-web: gunicorn inheritance.inheritance.wsgi
+web: gunicorn inheritance.wsgi

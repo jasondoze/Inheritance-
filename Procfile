@@ -1,1 +1,1 @@
-web: cd inheritance && gunicorn inheritance.wsgi
+web: cd inheritance && python manage.py migrate && gunicorn inheritance.wsgi

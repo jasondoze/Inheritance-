@@ -76,7 +76,7 @@ def deleteartifact(request, id):
         # delete object
         artifact.delete()
         
-        return HttpResponseRedirect(reverse('addartifact'))
+        return HttpResponseRedirect(reverse('landingpage'))
     else:
         return render(request, 'deleteartifact.html', {'artifact': artifact})
         

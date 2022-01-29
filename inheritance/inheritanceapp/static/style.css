@@ -116,7 +116,33 @@ button:hover > a {
   margin-bottom: -1.65rem;
 }
 button#editArtifactUploadBtn {
+  font-size: smaller;
   margin-right: -2.5rem;
+}
+button#editArtifactDeleteBtn a {
+  color: black;
+}
+button#editArtifactDeleteBtn {
+  font-size: smaller;
+}
+#deletePageDeleteBtn {
+  margin-left: 10rem;
+}
+#deletePageCancelBtn {
+  margin-left: -2.5rem;
+}
+#deletePageCancelBtn a {
+  color: black;
+}
+#deleteCancelDiv {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+}
+#confirmDeleteText {
+  text-align: center;
+  font-size: small;
 }
 button.btn.btn-primary {
   font-size: x-small;
@@ -263,7 +289,7 @@ input:-webkit-autofill:active {
 select#id_category {
   width: 9rem;
   margin-right: -2.5rem;
-  padding: 0.25rem 0.125rem;
+  padding: 0.125rem 0.125rem;
   outline: none;
 
   text-align: center;
@@ -388,6 +414,10 @@ div.filtersDiv {
 div.filtersDiv > label {
   position: absolute;
   z-index: -1;
+}
+#filterResetButton {
+  font-size: smaller;
+  margin-left: -0.5rem;
 }
 .createdAtClass {
   display: none;

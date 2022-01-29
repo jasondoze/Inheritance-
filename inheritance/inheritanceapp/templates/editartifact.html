@@ -26,25 +26,43 @@
 <br />
 <div id="addArtifactFormWrappingDiv">
   <center>
-    <img src="{{ artifact.image.url }}" alt="connect" id="editPageImageRender" />
+    <img
+      src="{{ artifact.image.url }}"
+      alt="connect"
+      id="editPageImageRender"
+    />
     <form method="post" enctype="multipart/form-data" id="editArtifactFormDiv">
       {% csrf_token %} {{ form }}
-      <button type="submit" id="editArtifactUploadBtn">Save To Gallery</button>
-      <button type="submit" id="editArtifactDeleteBtn">Delete</button>
+      <button type="submit" id="editArtifactUploadBtn">save</button>
+      <button type="submit" id="editArtifactDeleteBtn">
+        <form method="POST">
+          <!-- Security token by Django -->
+          {% csrf_token %}
+          <!-- Delete button to start the delete process -->
+          <a href="/deleteartifact/{{artifact.artifact_id}}">delete</a>
+        </form>
+      </button>
       <p id="addArtifactDisclaimerInfo">
-        disclaimer/disclosure notice to users 1) outlining that they have a
-        chance to not add to the inheritance community by clicking DELETE
-        INSTEAD OF SAVE BEFORE ADDING ARTIFACT (on click, this clears all
-        entered content and resets the form to empty fields ready for the
-        addition of an artifact), 2) informing users that once artifacts are
-        added to inheritance those artifacts cannot be deleted, 3) stating
-        acceptable & appropriate versus unacceptable & inappropriate content for
-        the inheritance community, 4) users have edit options during drafts
-        before their final publish, 5) and additional such content as necessary
+        disclaimer/disclosure notice to users 1a) you have a chance to not add
+        to the inheritance community by clicking
+        <em>DELETE INSTEAD OF SAVE BEFORE ADDING YOUR ARTIFACT</em> and
+        following the prompts to complete your deletion, 1b) before confirming
+        your deletion you can click cancel to return to content you entered and
+        complete your submission, 2) please take care to
+        <em>edit your content before your once, only, and final submission</em>
+        - you will not be able to edit your content after it is submitted, 3a)
+        you are hereby informed that once your artifact is added to the
+        inheritance community it cannot be deleted by you, 3b)
+        <em
+          >unacceptable, inappropriate, and misaligned artifacts will be
+          removed</em
+        >
+        from the inheritance community without notice to those who submitted the
+        content
       </p>
     </form>
   </center>
-<!-- The image filters below create sliders to manipulate the image before saving to the image gallery -->
+  <!-- The image filters below create sliders to manipulate the image before saving to the image gallery -->
   <div class="editPgFilterBtnsDiv">
     <div class="filtersDiv">
       <label class="filterLabels">Blur</label>
@@ -139,7 +157,9 @@
         data-default="0"
       /><br />
       <!-- added filter reset button to reset the filters to default positions -->
-      <button type="submit" onclick="resetFilters()" id="filterResetButton">Reset Filters</button>
+      <button type="submit" onclick="resetFilters()" id="filterResetButton">
+        reset filters
+      </button>
     </div>
   </div>
 </div>
@@ -147,43 +167,43 @@
 <br />
 <br />
 <div class="main">
-  <!-- Create a Form -->
+  <!-- CODE BLOCK BELOW FOR DELETE FORM MOVED ABOVE TO REPLACE INITIAL DELETE BUTTON
+  Comment: Create a Form
   <form method="POST">
-      <!-- Security token by Django -->
-      {% csrf_token %}
-      <!-- Delete button to start the delete process -->
-      <a href="/deleteartifact/{{artifact.artifact_id}}">Delete</a>
-      
-  </form>
+    Comment: Security token by Django
+    {% csrf_token %}
+    Comment: Delete button to start the delete process
+    <a href="/deleteartifact/{{artifact.artifact_id}}">Delete</a>
+  </form>  -->
 
-
-<script type="text/javascript">
-  // This function applies the filter to the image by scanning the filter controls and applying the updated filter text string to the image.
-  var image = document.getElementById("editPageImageRender");
-  var filterControls = document.querySelectorAll("input.filterSliders");
-  function applyFilter() {
-    var computedFilters = "";
-    filterControls.forEach(function (item, index) {
-      computedFilters +=
-        item.getAttribute("data-filter") +
-        "(" +
-        item.value +
-        item.getAttribute("data-scale") +
-        ") ";
-    });
-    console.log(computedFilters);
-    image.style.filter = computedFilters;
-    document.getElementById("id_imgfilter").value = computedFilters;
-  }
-  
-  // This function resets the filters to their default values.
-  // Added class 'filterSliders' to all filter sliders 
-  function resetFilters() {
-    filterControls.forEach(function (item, index) {
-      item.value = item.getAttribute("data-default");
+  <script type="text/javascript">
+    // This function applies the filter to the image by scanning the filter controls and applying the updated filter text string to the image.
+    var image = document.getElementById("editPageImageRender");
+    var filterControls = document.querySelectorAll("input.filterSliders");
+    function applyFilter() {
+      var computedFilters = "";
+      filterControls.forEach(function (item, index) {
+        computedFilters +=
+          item.getAttribute("data-filter") +
+          "(" +
+          item.value +
+          item.getAttribute("data-scale") +
+          ") ";
       });
-    applyFilter();
-  }
-</script>
+      console.log(computedFilters);
+      image.style.filter = computedFilters;
+      document.getElementById("id_imgfilter").value = computedFilters;
+    }
 
-{% endblock content %}
+    // This function resets the filters to their default values.
+    // Added class 'filterSliders' to all filter sliders
+    function resetFilters() {
+      filterControls.forEach(function (item, index) {
+        item.value = item.getAttribute("data-default");
+      });
+      applyFilter();
+    }
+  </script>
+
+  {% endblock content %}
+</div>

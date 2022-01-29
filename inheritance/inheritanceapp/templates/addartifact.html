@@ -1,5 +1,5 @@
 <!-- Extends calls from external file main.html to add consistent style & elements -->
-{% extends 'main.html' %} {% block content %}
+{% extends 'main.html' %} {% load static %} {% block content %}
 <button type="button">
   <a href="{% url 'gallery' %}">GALLERY</a>
 </button>

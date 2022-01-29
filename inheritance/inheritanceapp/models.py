@@ -28,6 +28,7 @@ class Artifact(models.Model):
         ('',''),
         ('artistic', 'artistic'),
         ('beautiful', 'beautiful'),
+        ('melancholy', 'melancholy'),
         ("profound", "profound")
     ])
 

@@ -29,6 +29,13 @@
       <li>
         <a
           class="dropdown-item"
+          href="{% url 'gallery-category' category='melancholy' %}"
+          >melancholy</a
+        >
+      </li>
+      <li>
+        <a
+          class="dropdown-item"
           href="{% url 'gallery-category' category='profound' %}"
           >profound</a
         >
@@ -43,11 +50,7 @@
   </button>
   <br />
   <br />
-  <!-- COMMENTED OUT PER INDUSTRY STANDARD TO BAKE HOME LINK INTO NAV/BRAND (NOT INTO AN ACTUAL BUTTON) -->
-  <!-- <button type="button" class="galleryPageHomeBtn">
-    <a href="{% url 'landingpage' %}" class="galleryPageHomeBtn">HOME</a>
-  </button>
-</div> -->
+
   <br />
   <br />
 

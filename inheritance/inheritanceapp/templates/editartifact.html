@@ -1,11 +1,5 @@
 {% extends 'main.html' %} {% load static %} {% block content %}
 
-<!-- COMMENTED OUT PER INDUSTRY STANDARD TO BAKE HOME LINK INTO NAV/BRAND (NOT INTO AN ACTUAL BUTTON) -->
-<!-- <button type="button" class="editPgHomeBtn galleryPageHomeBtn">
-  <a href="{% url 'landingpage' %}" class="galleryPageHomeBtn">HOME</a>
-</button>
-<br />
-<br /> -->
 <button type="button" title="Our Story Button">
   <a href="{% url 'ourstory' %}">OUR STORY</a>
 </button>
@@ -167,15 +161,6 @@
 <br />
 <br />
 <div class="main">
-  <!-- CODE BLOCK BELOW FOR DELETE FORM MOVED ABOVE TO REPLACE INITIAL DELETE BUTTON
-  Comment: Create a Form
-  <form method="POST">
-    Comment: Security token by Django
-    {% csrf_token %}
-    Comment: Delete button to start the delete process
-    <a href="/deleteartifact/{{artifact.artifact_id}}">Delete</a>
-  </form>  -->
-
   <script type="text/javascript">
     // This function applies the filter to the image by scanning the filter controls and applying the updated filter text string to the image.
     var image = document.getElementById("editPageImageRender");

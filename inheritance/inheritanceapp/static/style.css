@@ -30,7 +30,7 @@ body {
   left: 50rem;
   bottom: -7.5rem;
 }
-/* COMMENT BELOW CODE IN IF/WHEN USE UID CODE ON LANDING PAGE */
+/* COMMENT BELOW CODE IN IF/WHEN USE UID AND/OR DESCRIPTION CODE ON LANDING PAGE */
 /* .landingPgArtifactUID {
   color: wheat;
   font-size: xx-large;
@@ -42,13 +42,13 @@ body {
   color: darkblue;
   text-shadow: 0.031rem 0.031rem turquoise;
 } */
-.landingPgArtifactDescr {
+/* .landingPgArtifactDescr {
   width: 25%;
-  color: black;
+  color: whitesmoke;
   font-size: large;
   text-transform: lowercase;
-  text-shadow: 0.031rem 0.031rem whitesmoke;
-}
+  text-shadow: 0.031rem 0.031rem black;
+} */
 button,
 #symbolicRelease,
 p#ourStoryIntroSentence,
@@ -72,31 +72,34 @@ img#inheritanceLogo {
 button {
   width: 9rem;
   border-radius: 4.188rem;
-  border-color: tomato;
-  background-color: white;
+  border-color: crimson;
+  background-color: whitesmoke;
   margin-bottom: -1.375rem;
 }
 button > a {
   text-decoration: none;
-  color: darksalmon;
+  color: dimgray;
 }
 button:hover > a {
-  color: tomato;
+  color: crimson;
+}
+button.btn-secondary:active,
+button.btn-secondary:focus {
+  box-shadow: none;
 }
 .btn-secondary {
-  color: darksalmon;
+  color: gray;
   border: 0.085rem solid black;
   border-radius: 4.188rem;
   background-color: white;
-  box-shadow: 0.016rem 0.016rem 0.016rem 0.016rem black;
 
   padding-top: 0.11rem;
   padding-bottom: 0.11rem;
 }
 .btn-secondary:hover {
-  color: tomato;
+  color: crimson;
   background-color: white;
-  border: 0.085rem solid tomato;
+  border: 0.085rem solid crimson;
 }
 .dropdown {
   border: 0;
@@ -118,39 +121,72 @@ button:hover > a {
 button#editArtifactUploadBtn {
   font-size: smaller;
   margin-right: -2.5rem;
+  background-color: white;
 }
 button#editArtifactDeleteBtn a {
   color: black;
 }
+button#editArtifactDeleteBtn a:hover {
+  color: crimson;
+}
 button#editArtifactDeleteBtn {
   font-size: smaller;
+  background-color: white;
 }
-#deletePageDeleteBtn {
-  margin-left: 10rem;
-}
-#deletePageCancelBtn {
-  margin-left: -2.5rem;
-}
-#deletePageCancelBtn a {
-  color: black;
-}
-#deleteCancelDiv {
+
+#deletePageTextBtnsDiv {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
-  align-content: center;
+}
+#deletePageDeleteBtn {
+  margin-left: 8.5rem;
+  background-color: crimson;
+}
+#deletePageDeleteBtn:hover {
+  color: darkred;
+  transform: scale(0.85);
+  text-shadow: 0.025rem 0.025rem black;
+}
+#deletePageCancelButton {
+  background-color: white;
+}
+#deletePageCancelButton:hover {
+  transform: scale(1.15);
+}
+a#deletePageCancelBtn {
+  color: black;
+}
+a#deletePageCancelBtn:hover {
+  color: limegreen;
 }
 #confirmDeleteText {
+  color: limegreen;
+  font-weight: bold;
   text-align: center;
-  font-size: small;
+  font-size: larger;
+  text-shadow: 0.05rem 0.05rem black;
+  /* CODE AT END OF THIS BLOCK SETS BLINKING TEXT */
+  animation: animate 1.5s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 button.btn.btn-primary {
   font-size: x-small;
-  color: tomato;
+  color: crimson;
   text-shadow: 0.016rem 0.016rem black;
   background-color: crimson;
-  border: 0.063rem solid tomato;
-  box-shadow: 0.016rem 0.016rem 0.016rem 0.016rem black;
+  border: 0.063rem solid crimson;
 
   padding: 0.188rem;
   width: 4.188rem;
@@ -160,7 +196,7 @@ button.btn.btn-primary {
 }
 button.btn.btn-primary:hover {
   transform: scale(1.15);
-  background-color: darksalmon;
+  background-color: #ebecf0;
 }
 /* CODE BELOW USES SPECIFICITY TO TARGET EXACT LABEL TO DISPLAY WHILE LABEL=FALSE APPLIED TO ATTRIBUTES IN FORMS FILE ALLOWS OTHER LABELS TO NOT DISPLAY */
 form#editArtifactFormDiv label {
@@ -184,7 +220,7 @@ form > input#symbolicRelease:focus {
   outline: none;
 }
 form > input#symbolicRelease:focus {
-  border: 0.072rem dotted tomato;
+  border: 0.072rem dotted crimson;
   background-color: whitesmoke;
 }
 form > input#symbolicRelease::placeholder {
@@ -193,10 +229,11 @@ form > input#symbolicRelease::placeholder {
 #symRelSubmitBtn {
   border-radius: 4.188rem;
   width: 9rem;
+  background-color: white;
 }
 #symRelSubmitBtn:hover {
-  color: tomato;
-  border-color: tomato;
+  color: crimson;
+  border-color: crimson;
 }
 /* NEXT 2 LINES NICE BIT OF CSS ADDED TO THE TOOLKIT */
 input[type="text"]#symbolicRelease {
@@ -213,8 +250,8 @@ p#ourStoryIntroSentence {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-weight: bold;
   color: whitesmoke;
-  text-shadow: 0.016rem 0.016rem black;
-  font-size: 10.438rem;
+  text-shadow: 0.025rem 0.025rem black;
+  font-size: 7.438rem;
   text-transform: uppercase;
 
   margin-top: -1.688rem;
@@ -236,13 +273,13 @@ p#ourStoryIntroSentence {
 #ourStoryAddArtifactPageLink {
   text-decoration: none;
   font-size: small;
-  color: darksalmon;
+  color: gray;
   text-shadow: 0.016rem 0.016rem black;
 }
 #ourStoryAddArtifactPageLink:hover,
 button:hover,
 #preloadImgEditBtn > a:hover {
-  color: tomato;
+  color: crimson;
 }
 input#id_imgfilter {
   display: none;
@@ -271,7 +308,7 @@ input#id_imgdesc {
   padding: 0.563rem;
 }
 input#file-upload-button {
-  background-color: tomato;
+  background-color: crimson;
 }
 .control-choosefile-btn {
   color: red;
@@ -296,7 +333,15 @@ select#id_category {
   font-size: small;
   border-radius: 4.188rem;
   background-color: white;
-  border: 0.125rem solid tomato;
+  border: 0.125rem solid crimson;
+}
+/* BELOW CODE HIDES LABEL FOR CATEGORY ON ADD ARTIFACT PAGE */
+p label {
+  display: none;
+}
+/* BELOW CODE MOVES DROPDOWN CONTAINER ON ADD ARTIFACT PAGE INDEPENDENT OF SELECT#ID_CATEGORY ABOVE WHICH ALSO MOVES THIS CONTAINER WHEN THE P IS NOT USED TO INCREASE SPECIFICITY */
+p select#id_category {
+  margin-right: -0.005rem;
 }
 input#id_imgtitle:focus,
 input#id_imgdesc:focus,
@@ -312,8 +357,8 @@ input#id_image {
 input#id_imgtitle:focus,
 input#id_imgdesc:focus,
 input#id_image:focus {
-  border-color: tomato;
-  border: 0.078rem dotted darksalmon;
+  border-color: crimson;
+  border: 0.078rem dotted gray;
 }
 center,
 #preloadedImg,
@@ -392,7 +437,7 @@ label.filterLabels {
 input[type="range"] {
   -webkit-appearance: none;
   background-color: transparent;
-  border: 0.025rem solid tomato;
+  border: 0.025rem solid crimson;
   border-radius: 0.5rem;
   outline: none;
 }
@@ -418,6 +463,7 @@ div.filtersDiv > label {
 #filterResetButton {
   font-size: smaller;
   margin-left: -0.5rem;
+  background-color: white;
 }
 .createdAtClass {
   display: none;

@@ -2,17 +2,24 @@
 {% extends 'main.html' %} {% load static %} {% block content%}
 <div id="bigViewDiv">
   <div id="landingPageAllContentButImgDiv">
-    <button type="button" title="Our Story Button">
-      <a href="{% url 'ourstory' %}">OUR STORY</a>
+
+    <button type="button" class="btn045">
+      <a href="{% url 'ourstory' %}"><svg width="11.25rem" height="3.75rem" viewBox="0 0 180 60" class="border ourStory">
+        <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+        <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+      </svg> 
+     OUR STORY</a>
     </button>
     <br />
     <br />
-    <button type="button">
-      <a href="{% url 'gallery' %}">GALLERY</a>
+
+    <button type="button" class="btn045 gallery">
+      <a href="{% url 'gallery' %}"> GALLERY</a>
     </button>
     <br />
     <br />
-    <button type="button">
+
+    <button type="button"  class="btn045 addArtifact">
       <a href="{% url 'addartifact' %}">ADD ARTIFACT</a>
     </button>
     <br />

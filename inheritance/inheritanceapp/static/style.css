@@ -1,8 +1,7 @@
 /* This css file is where our external styles are being pulled from */
 
 body {
-  background-color: #fafafa;
-  background-image: url("/static/cleanse.jpg") no-repeat;
+  background-color: whitesmoke;
   background-size: cover;
   z-index: -1;
   margin-top: -5rem;
@@ -63,10 +62,9 @@ button.btn-secondary:focus {
   box-shadow: none;
 }
 .btn-secondary {
-  color: gray;
+  color: black;
   border: 0.085rem solid black;
   border-radius: 4.188rem;
-  background-color: white;
 
   padding-top: 0.11rem;
   padding-bottom: 0.11rem;
@@ -99,7 +97,7 @@ button#addArtifactUploadBtn {
 button#editArtifactUploadBtn {
   font-size: smaller;
   margin-right: -2.5rem;
-  background-color: white;
+  background-color: transparent;
 }
 button#editArtifactDeleteBtn a {
   color: black;
@@ -109,7 +107,7 @@ button#editArtifactDeleteBtn a:hover {
 }
 button#editArtifactDeleteBtn {
   font-size: smaller;
-  background-color: white;
+  background-color: transparent;
 }
 #deletePageTextBtnsDiv {
   width: 50%;
@@ -119,6 +117,27 @@ button#editArtifactDeleteBtn {
 #deletePageDeleteBtn {
   margin-left: 8.5rem;
   background-color: crimson;
+  /* CODE AT END OF THIS BLOCK CREATES ANIMATED CIRCLE AROUND DELETE BUTTON */
+  box-shadow: 0 0 0 0 crimson;
+  transform: scale(1);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 crimson;
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
 }
 #deletePageDeleteBtn:hover {
   color: darkred;
@@ -126,7 +145,7 @@ button#editArtifactDeleteBtn {
   text-shadow: 0.025rem 0.025rem black;
 }
 #deletePageCancelButton {
-  background-color: white;
+  background-color: transparent;
 }
 #deletePageCancelButton:hover {
   transform: scale(1.15);
@@ -192,13 +211,14 @@ b {
 #symbolicRelease {
   width: 50%;
   border-radius: 4.188rem;
+  margin-top: 1.25rem;
 }
 form > input#symbolicRelease:focus {
   outline: none;
 }
 form > input#symbolicRelease:focus {
   border: 0.072rem dotted crimson;
-  background-color: whitesmoke;
+  background-color: white;
 }
 form > input#symbolicRelease::placeholder {
   font-size: smaller;
@@ -206,7 +226,7 @@ form > input#symbolicRelease::placeholder {
 #symRelSubmitBtn {
   border-radius: 4.188rem;
   width: 9rem;
-  background-color: white;
+  background-color: transparent;
 }
 #symRelSubmitBtn:hover {
   color: crimson;
@@ -248,7 +268,7 @@ p#ourStoryIntroSentence {
 #ourStoryAddArtifactPageLink {
   text-decoration: none;
   font-size: small;
-  color: gray;
+  color: black;
   text-shadow: 0.016rem 0.016rem black;
 }
 #ourStoryAddArtifactPageLink:hover,
@@ -257,7 +277,7 @@ button:hover,
   color: crimson;
 }
 button#preloadImgEditBtn {
-  background-color: white;
+  background-color: transparent;
 }
 input#id_imgfilter {
   display: none;
@@ -357,7 +377,7 @@ center,
 h3.uploadSuccessText {
   color: limegreen;
   text-align: center;
-  font-size: large;
+  font-size: x-large;
   text-shadow: 0.025rem 0.025rem black;
 
   /* CODE AT END OF THIS BLOCK SETS BLINKING TEXT */
@@ -410,12 +430,17 @@ center form {
   width: 100%;
   margin-top: 1.5rem;
 }
+#disclaimerOurStoryLink {
+  text-decoration: none;
+  color: crimson;
+  text-shadow: 0.025rem 0.025rem black;
+}
 #addArtifactDisclaimerInfo:hover {
-  color: limegreen;
+  color: black;
   font-size: small;
   padding: 1.3rem;
-  border: 0.0313rem solid white;
-  background-color: whitesmoke;
+  border: 0.0313rem solid limegreen;
+  background-color: limegreen;
   transform: scale(1.45);
   transition: all 3s;
   width: 100%;
@@ -457,7 +482,7 @@ div.filtersDiv > label {
 #filterResetButton {
   font-size: smaller;
   margin-left: -0.5rem;
-  background-color: white;
+  background-color: transparent;
 }
 .createdAtClass {
   display: none;
@@ -512,72 +537,111 @@ label.form-check-label {
   }
 }
 
-/* CSS --- This is code to make the buttons have an animated effect, maybe a cool aesthetic upgrade...100 Days CSS Button N 045 (button name) https://www.sliderrevolution.com/resources/css-button-hover-effects/ (button site)
-@import url('https://fonts.googleapis.com/css?family=Lato:100&display=swap'); */
+/* CSS --- This is code to make the buttons have an animated effect, maybe a cool aesthetic upgrade...100 Days CSS Button N 045 (button name) https://www.sliderrevolution.com/resources/css-button-hover-effects/ (button site) */
 
-/* body, html {
-width: 100%;
-height: 100%;
-margin: 0;
-padding: 0;
-background: #5CA4EA;
-overflow: hidden;
-font-family: 'Lato', sans-serif;
+@import url("https://fonts.googleapis.com/css?family=Lato:100&display=swap");
+/* BELOW 3 CODE BLOCKS PART OF ORIGINAL CODE SET FOR CSS EFFECT; NOT NEEDED BECAUSE PROJECT HAS ITS OWN BODY/HTML SETUP */
+
+/* body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #5ca4ea;
+  overflow: hidden;
+  font-family: "Lato", sans-serif;
+} */
+
+/* .container {
+  width: 25rem;
+  height: 25rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* .center {
+  width: 11.25rem;
+  height: 3.75rem;
+  position: absolute;
+} */
+
+.btn045 {
+  width: 11.25rem;
+  height: 3.75rem;
+  cursor: pointer;
+  background: transparent;
+  border: 0.063rem solid whitesmoke;
+  outline: none;
+  transition: 1s ease-in-out;
 }
 
-.container {
-width: 400px;
-height: 400px;
-position: absolute;
-left: 50%;
-top: 50%;
-transform: translate(-50%, -50%);
-display: flex;
-justify-content: center;
-align-items: center;
+.btn045.galleryOnOurStory,
+.btn045.addArtifactOnOurStory,
+.browseOnOurStory {
+  color: #545454;
+  border: 0.063rem solid #545454;
 }
 
-.center {
-width: 180px;
-height: 60px;
-position: absolute;
+.btn045.galleryOnOurStory a,
+.btn045.addArtifactOnOurStory a {
+  color: #545454;
 }
 
-.btn {
-width: 180px;
-height: 60px;
-cursor: pointer;
-background: transparent;
-border: 1px solid #91C9FF;
-outline: none;
-transition: 1s ease-in-out;
+.btn045.galleryOnOurStory:hover,
+.btn045.addArtifactOnOurStory:hover,
+.browseOnOurStory:hover {
+  background-color: #545454;
+  border: 0.063rem solid whitesmoke;
+}
+
+.btn045.galleryOnOurStory a:hover,
+.btn045.addArtifactOnOurStory a:hover {
+  color: crimson;
 }
 
 svg {
-position: absolute;
-left: 0;
-top: 0;
-fill: none;
-stroke: #fff;
-stroke-dasharray: 150 480;
-stroke-dashoffset: 150;
-transition: 1s ease-in-out;
+  position: absolute;
+  left: 0;
+  top: 0;
+  fill: none;
+  stroke: whitesmoke;
+  stroke-dasharray: 150 480;
+  stroke-dashoffset: 150;
+  transition: 1s ease-in-out;
 }
 
-.btn:hover {
-transition: 1s ease-in-out;
-background: #4F95DA;
+svg.border {
+  position: absolute;
+  left: 2.75rem;
+  border-radius: 3.125rem 3.125rem;
 }
 
-.btn:hover svg {
-stroke-dashoffset: -480;
+.btn045:hover {
+  transition: 1s ease-in-out;
+  background: #545454;
+  text-shadow: 0.05rem 0.05rem black;
 }
 
-.btn span {
-color: white;
-font-size: 18px;
-font-weight: 100;
-}  */
+.btn045:hover svg {
+  stroke-dashoffset: -480;
+}
+
+button.btn045.gallery:hover {
+  stroke-dashoffset: -480;
+}
+
+/* CODE BELOW IRRELEVANT */
+/* .btn045 span {
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 100;
+} */
 
 /* This is CSS to toggle our app between normal and dark mode */
 /* body {

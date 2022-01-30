@@ -4,7 +4,6 @@ from django.db.models.fields import DateTimeField
 from io import BytesIO
 from django.core.files.base import ContentFile
 
-
 # Create your models here.
 # model(s) for blog-style additions and edits
 # Article model for the database the artifact will be stored in with the following fields:

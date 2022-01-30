@@ -1,16 +1,16 @@
 {% extends 'main.html' %} {% load static %} {% block content %}
 
-<button type="button" title="Our Story Button">
+<button type="button" class="btn045 ourStory galleryOnOurStory">
   <a href="{% url 'ourstory' %}">OUR STORY</a>
 </button>
 <br />
 <br />
-<button type="button">
+<button type="button" class="btn045 addArtifact galleryOnOurStory">
   <a href="{% url 'addartifact' %}">ADD ARTIFACT</a>
 </button>
 <br />
 <br />
-<button type="button" class="editPgGalleryBtn">
+<button type="button" class="editPgGalleryBtn btn045 gallery galleryOnOurStory">
   <a href="{% url 'gallery' %}">GALLERY</a>
 </button>
 <br />
@@ -52,7 +52,13 @@
           removed</em
         >
         from the inheritance community without notice to those who submitted the
-        content
+        content - intently read
+        <strong>
+          <a href="{% url 'ourstory' %}" id="disclaimerOurStoryLink"
+            >Our Story</a
+          ></strong
+        >
+        carefully for guidance
       </p>
     </form>
   </center>

@@ -9,7 +9,7 @@
 <div id="addArtifactFormWrappingDiv">
   <center>
     {% if img_obj %}
-    <!-- if image is successfully uploaded, the image will appear with this text -->
+    <!-- when image successfully uploaded, the image appears with this text -->
     <h3 class="uploadSuccessText">Succesfully Uploaded {{img_obj.title}}</h3>
     <img src="{{ img_obj.image.url}}" alt="connect" id="preloadedImg" />
     <button type="button" id="preloadImgEditBtn">

@@ -17,7 +17,7 @@ class ImageForm(forms.ModelForm):
         model = Artifact
         fields = ('artifact_id', 'imgtitle', 'imgdesc', 'image', 'category')
 
-# This code is a form for adding an image to the website. The user will enter their title and description, then upload an image from their computer. The code is a form with two fields, one for the title of the image and one for the description.    
+# This code is a form for adding an image to the website. The user will enter their title and description, then upload an image from their computer. The code is a form with two fields, one for the title of the image and one for the description, and one for the widget image placeholder.    
 class EditorForm(forms.Form):
     imgtitle = forms.CharField(max_length=13, required=True, label=False, widget=forms.TextInput(attrs={'style': 'text-transform:lowercase;', 'placeholder': 'enter title'}))
 
@@ -26,7 +26,7 @@ class EditorForm(forms.Form):
     image = forms.URLField(required=True, label=False, widget=forms.TextInput(attrs={'placeholder': 'add image'}))
 
 
-# This code is a form for editing the photo in the website. The user will can re-enter their title and description, then filter their image using sliders located below the photo. The code is a form with three fields, one for the title of the image, one for the description, and one for the filtered image.  
+# This code is a form for editing the photo in the website. The user will can re-enter their title and description, then filter their image using sliders located below the photo. The code is a form with four fields, one for the title of the image, one for the description, one for the filtered image, and one for the category tags.  
 class EditImageForm(forms.ModelForm):
     """Form for the image model"""
     class Meta:

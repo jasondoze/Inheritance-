@@ -17,7 +17,7 @@ from django.core.files.base import ContentFile
 # category: category of the artifact
 class Artifact(models.Model):
     artifact_id = models.AutoField(primary_key=True)
-    imgtitle = models.CharField(max_length=11)
+    imgtitle = models.CharField(max_length=13)
     imgdesc = models.CharField(max_length=24)
     imgfilter = models.CharField(default="", max_length=500, blank=True)
     image = models.ImageField(upload_to='images/')

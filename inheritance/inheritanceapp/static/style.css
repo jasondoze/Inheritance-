@@ -1,7 +1,11 @@
 /* This css file is where our external styles are being pulled from */
-
 body {
-  background-color: whitesmoke;
+  background-size: cover;
+  z-index: -1;
+  margin-top: -5rem;
+}
+body.mainBody {
+  background-color: #545454;
   background-size: cover;
   z-index: -1;
   margin-top: -5rem;
@@ -14,6 +18,7 @@ body {
   position: absolute;
   z-index: -1;
   margin-top: -30rem;
+  opacity: 0.9;
 }
 #ImgOnLandingPage {
   width: 100%;
@@ -71,7 +76,7 @@ button.btn-secondary:focus {
 }
 .btn-secondary:hover {
   color: crimson;
-  background-color: white;
+  background-color: whitesmoke;
   border: 0.085rem solid crimson;
 }
 .dropdown {
@@ -97,7 +102,7 @@ button#addArtifactUploadBtn {
 button#editArtifactUploadBtn {
   font-size: smaller;
   margin-right: -2.5rem;
-  background-color: transparent;
+  background-color: white;
 }
 button#editArtifactDeleteBtn a {
   color: black;
@@ -107,7 +112,7 @@ button#editArtifactDeleteBtn a:hover {
 }
 button#editArtifactDeleteBtn {
   font-size: smaller;
-  background-color: transparent;
+  background-color: white;
 }
 #deletePageTextBtnsDiv {
   width: 50%;
@@ -145,7 +150,7 @@ button#editArtifactDeleteBtn {
   text-shadow: 0.025rem 0.025rem black;
 }
 #deletePageCancelButton {
-  background-color: transparent;
+  background-color: limegreen;
 }
 #deletePageCancelButton:hover {
   transform: scale(1.15);
@@ -154,7 +159,7 @@ a#deletePageCancelBtn {
   color: black;
 }
 a#deletePageCancelBtn:hover {
-  color: limegreen;
+  color: white;
 }
 #confirmDeleteText {
   color: limegreen;
@@ -227,6 +232,8 @@ form > input#symbolicRelease::placeholder {
   border-radius: 4.188rem;
   width: 9rem;
   background-color: transparent;
+  border-color: whitesmoke;
+  color: whitesmoke;
 }
 #symRelSubmitBtn:hover {
   color: crimson;
@@ -482,7 +489,7 @@ div.filtersDiv > label {
 #filterResetButton {
   font-size: smaller;
   margin-left: -0.5rem;
-  background-color: transparent;
+  background-color: white;
 }
 .createdAtClass {
   display: none;
@@ -636,7 +643,7 @@ button.btn045.gallery:hover {
   stroke-dashoffset: -480;
 }
 
-/* CODE BELOW IRRELEVANT */
+/* FIRST CODE BLOCK BELOW IRRELEVANT */
 /* .btn045 span {
   color: white;
   font-size: 1.125rem;
@@ -645,13 +652,13 @@ button.btn045.gallery:hover {
 
 /* This is CSS to toggle our app between normal and dark mode */
 /* body {
-    padding: 25px;
-    background-color: white;
-    color: black;
-    font-size: 25px;
-  }
-  
-  .dark-mode {
-    background-color: black;
-    color: white;
-  }  */
+  padding: 25px;
+  background-color: white;
+  color: black;
+  font-size: 25px;
+} */
+
+/* .dark-mode {
+  background-color: black;
+  color: white;
+} */

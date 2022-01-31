@@ -14,6 +14,13 @@ Jason Doze<br>
 La'Tonia Mertica Sheppard Walker<br>
 [GITHUB UN: LaTonia-Mertica](https://github.com/LaTonia-Mertica)<br>
 
+### **MENTOR SUPPORT**<br>
+
+- Chris Baker, Justice Through Code
+- Nate Evans, Careers in Code
+- Chelsea Troy, Emergent Works
+- Max Matthews, Careers in Code
+
 ###### [view flow chart](images/Flowchart.png)
 
 ###### [view landing page wireframe](images/landingpagewireframe.png)
@@ -131,6 +138,8 @@ Gallery is a collection of the vibrancy of contributions through shared artifact
 <br>
 **NEXT STEPS**
 
+- fluid interlocking image design on gallery page per image sizes
+- maintain db content on re/new deploy (not delete on new deploy)
 - revisit backlog and prioritize series of subsequent implementations
 - purchase and implement domain for polished custom url experience
 - upgrade [heroku.com](https://www.heroku.com/) account to basic paid to maintain active server

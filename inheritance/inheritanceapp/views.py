@@ -73,7 +73,7 @@ def image_upload_view(request):
         return render(request, 'addartifact.html', {'form': form})
 
 
- # The code starts by getting the artifact_id from the request and then deleting the artifact from the database. Then it returns a HttpResponseRedirect to the addartifact page.
+ # The function starts by getting the artifact_id from the request and then deleting the artifact from the database. Then it returns a HttpResponseRedirect to the addartifact page.
 def deleteartifact(request, id):
     # fetch the object related to passed id
     try:

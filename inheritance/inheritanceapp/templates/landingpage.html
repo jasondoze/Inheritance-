@@ -1,58 +1,68 @@
 <!-- Sets the stage for the inheritance experience -->
 {% extends 'main.html' %} {% load static %} {% block content%}
 <div id="bigViewDiv">
-  <div id="landingPageAllContentButImgDiv">
+  <div class="mainBody">
+    <div id="landingPageAllContentButImgDiv">
+      <button type="button" class="btn045">
+        <a href="{% url 'ourstory' %}"
+          ><svg
+            width="11.25rem"
+            height="3.75rem"
+            viewBox="0 0 180 60"
+            class="border ourStory"
+          >
+            <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+            <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+          </svg>
+          OUR STORY</a
+        >
+      </button>
+      <br />
+      <br />
 
-    <button type="button" class="btn045">
-      <a href="{% url 'ourstory' %}"><svg width="11.25rem" height="3.75rem" viewBox="0 0 180 60" class="border ourStory">
-        <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
-        <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
-      </svg> 
-     OUR STORY</a>
-    </button>
-    <br />
-    <br />
+      <button type="button" class="btn045 gallery">
+        <a href="{% url 'gallery' %}"> GALLERY</a>
+      </button>
+      <br />
+      <br />
 
-    <button type="button" class="btn045 gallery">
-      <a href="{% url 'gallery' %}"> GALLERY</a>
-    </button>
-    <br />
-    <br />
+      <button type="button" class="btn045 addArtifact">
+        <a href="{% url 'addartifact' %}">ADD ARTIFACT</a>
+      </button>
+      <br />
+      <br />
 
-    <button type="button"  class="btn045 addArtifact">
-      <a href="{% url 'addartifact' %}">ADD ARTIFACT</a>
-    </button>
-    <br />
-    <br />
+      <form>
+        <input
+          type="text"
+          id="symbolicRelease"
+          name="symbolic_release"
+          placeholder="symbolic release: unburdening from ..."
+          title="SYMBOLIC RELEASE"
+        />
+        <input
+          type="submit"
+          id="symRelSubmitBtn"
+          name="sym_rel_submit_btn"
+          value="SUBMIT"
+        />
+      </form>
+    </div>
 
-    <form>
-      <input
-        type="text"
-        id="symbolicRelease"
-        name="symbolic_release"
-        placeholder="symbolic release: unburdening from ..."
-        title="SYMBOLIC RELEASE"
+    <div id="landingPageImgOnlyDiv">
+      <!-- single row/col to contain dynamic randomized image on landing page pulled from images uploaded to gallery -->
+      <img
+        src="{{background.image.url}}"
+        alt="Feature Image"
+        id="ImgOnLandingPage"
       />
-      <input
-        type="submit"
-        id="symRelSubmitBtn"
-        name="sym_rel_submit_btn"
-        value="SUBMIT"
-      />
-    </form>
+    </div>
   </div>
 
-  <div id="landingPageImgOnlyDiv">
-    <!-- single row/col to contain dynamic randomized image on landing page pulled from images uploaded to gallery -->
-    <img
-      src="{{background.image.url}}"
-      alt="Feature Image"
-      id="ImgOnLandingPage"
-    />
+  <div id="tinyViewDiv">
+    <h1>GO BIGGER</h1>
+    <p>your device/screen size is insufficient</p>
   </div>
-</div>
-
-<div id="tinyViewDiv"><h1>GO BIGGER</h1><p>your device/screen size is insufficient</p></div>  
 
   {% endblock content %}
 </div>

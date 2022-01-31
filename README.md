@@ -14,12 +14,18 @@ Jason Doze<br>
 La'Tonia Mertica Sheppard Walker<br>
 [GITHUB UN: LaTonia-Mertica](https://github.com/LaTonia-Mertica)<br>
 
+<br>
+
 ### **MENTOR SUPPORT**<br>
 
-- Chris Baker, Justice Through Code
-- Nate Evans, Careers in Code
-- Chelsea Troy, Emergent Works
-- Max Matthews, Careers in Code
+_couldn't have achieved the level we have without the stellar support of our mentors_
+
+- Software Engineer Chris Baker, Justice Through Code
+- Software Engineer Nate Evans, Careers in Code
+- Software Engineer Chelsea Troy, Emergent Works
+- Software Engineer Max Matthews, Careers in Code
+
+<br>
 
 ###### [view flow chart](images/Flowchart.png)
 
@@ -140,6 +146,7 @@ Gallery is a collection of the vibrancy of contributions through shared artifact
 
 - fluid interlocking image design on gallery page per image sizes
 - maintain db content on re/new deploy (not delete on new deploy)
+- refactor code to [more efficiently handle dynamic randomized images](https://medium.com/@jerinisready/how-to-fetch-random-item-from-a-filtered-queryset-in-django-orm-ca680df69328)
 - revisit backlog and prioritize series of subsequent implementations
 - purchase and implement domain for polished custom url experience
 - upgrade [heroku.com](https://www.heroku.com/) account to basic paid to maintain active server

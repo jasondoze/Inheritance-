@@ -12,7 +12,7 @@ from django.http import HttpResponseBadRequest
 
 # This function takes in a request and returns the template landingpage.html with an object of all artifacts ordered by their artifact_id. The code is using the objects method to get all artifacts from the database, then it orders them by their artifact_id which will be used later on when rendering the page. The code returns a landingpage.html template that contains the list of all artifacts. 
 def landingpage(request):
-    artifact = Artifact.objects.all().order_by('artifact_id')
+    artifact = Artifact.objects.all()
     if not artifact:
         background = None
     else: 
@@ -65,6 +65,8 @@ def image_upload_view(request):
             # Get the current instance object to display in the template
             img_obj = form.instance
             return render(request, 'addartifact.html', {'form': form, 'img_obj': img_obj})
+        else:
+            return HttpResponseBadRequest()
             
     else:
         form = ImageForm()
@@ -74,7 +76,12 @@ def image_upload_view(request):
  # The code starts by getting the artifact_id from the request and then deleting the artifact from the database. Then it returns a HttpResponseRedirect to the addartifact page.
 def deleteartifact(request, id):
     # fetch the object related to passed id
-    artifact = Artifact.objects.get(artifact_id=id)  
+    try:
+        artifact = Artifact.objects.get(artifact_id=id)  
+    # try/catch to avoid specific error when user clicks back in browser after deleting image
+    except Artifact.DoesNotExist:
+        return HttpResponseRedirect(reverse('landingpage'))
+
     if request.method =="POST":
         # delete object
         artifact.delete()

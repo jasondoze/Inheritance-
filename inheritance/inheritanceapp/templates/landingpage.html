@@ -49,24 +49,20 @@
       </form>
     </div>
 
-   <div id="tinyViewDiv">
-    <h1>GO BIGGER</h1>
-    <p>your device/screen size is insufficient</p>
-
-  <div id="landingPageImgOnlyDiv">
-    <!-- single row/col containing dynamic randomized image on landing page sourced from images uploaded to gallery by users -->
-    <img
-      src="{{background.image.url}}"
-      alt="Feature Image"
-      id="ImgOnLandingPage"
-    />
+    <div id="landingPageImgOnlyDiv">
+      <!-- single row/col containing dynamic randomized image on landing page sourced from images uploaded to gallery by users -->
+      <img
+        src="{{background.image.url}}"
+        alt="Feature Image"
+        id="ImgOnLandingPage"
+      />
     </div>
   </div>
-
-
- 
-
-  </div>
-
-  {% endblock content %}
 </div>
+
+<!-- THIS DIV MUST BE OUTSIDE MAIN BODY DIV BUT INSIDE ENDBLOCK -->
+<div id="tinyViewDiv">
+  <h1>GO BIGGER</h1>
+  <p>your device/screen size is insufficient</p>
+</div>
+{% endblock content %}
